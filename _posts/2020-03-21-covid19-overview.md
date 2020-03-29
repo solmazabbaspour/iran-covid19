@@ -30,6 +30,105 @@ layout: notebook
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at 'In [10]'.</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at 'In [9]'.</span>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-10-80902c074a73&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     newcases<span class="ansi-blue-fg">=</span>dft_ct_new_cases<span class="ansi-blue-fg">.</span>loc<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span> dt_cols<span class="ansi-blue-fg">[</span>LAST_DATE_I<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">50</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>dt_cols<span class="ansi-blue-fg">[</span>LAST_DATE_I<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     np<span class="ansi-blue-fg">=</span>np<span class="ansi-blue-fg">,</span> pd<span class="ansi-blue-fg">=</span>pd<span class="ansi-blue-fg">,</span> days<span class="ansi-blue-fg">=</span>days<span class="ansi-blue-fg">,</span> digits<span class="ansi-blue-fg">=</span>digits<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">---&gt; 14</span><span class="ansi-red-fg">     jdate_updated=jdate_updated, jdate_since=jdate_since, enumerate=enumerate)
+</span><span class="ansi-green-intense-fg ansi-bold">     15</span> HTML<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;&lt;div&gt;{html}&lt;/div&gt;&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/site-packages/jinja2/environment.py</span> in <span class="ansi-cyan-fg">render</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1088</span>             <span class="ansi-green-fg">return</span> concat<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>root_render_func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>new_context<span class="ansi-blue-fg">(</span>vars<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1089</span>         <span class="ansi-green-fg">except</span> Exception<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1090</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>environment<span class="ansi-blue-fg">.</span>handle_exception<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1091</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1092</span>     <span class="ansi-green-fg">def</span> render_async<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/site-packages/jinja2/environment.py</span> in <span class="ansi-cyan-fg">handle_exception</span><span class="ansi-blue-fg">(self, source)</span>
+<span class="ansi-green-intense-fg ansi-bold">    830</span>         <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>debug <span class="ansi-green-fg">import</span> rewrite_traceback_stack
+<span class="ansi-green-intense-fg ansi-bold">    831</span> 
+<span class="ansi-green-fg">--&gt; 832</span><span class="ansi-red-fg">         </span>reraise<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>rewrite_traceback_stack<span class="ansi-blue-fg">(</span>source<span class="ansi-blue-fg">=</span>source<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    833</span> 
+<span class="ansi-green-intense-fg ansi-bold">    834</span>     <span class="ansi-green-fg">def</span> join_path<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> template<span class="ansi-blue-fg">,</span> parent<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/site-packages/jinja2/_compat.py</span> in <span class="ansi-cyan-fg">reraise</span><span class="ansi-blue-fg">(tp, value, tb)</span>
+<span class="ansi-green-intense-fg ansi-bold">     26</span>     <span class="ansi-green-fg">def</span> reraise<span class="ansi-blue-fg">(</span>tp<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">,</span> tb<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     27</span>         <span class="ansi-green-fg">if</span> value<span class="ansi-blue-fg">.</span>__traceback__ <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> tb<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 28</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> value<span class="ansi-blue-fg">.</span>with_traceback<span class="ansi-blue-fg">(</span>tb<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     29</span>         <span class="ansi-green-fg">raise</span> value
+<span class="ansi-green-intense-fg ansi-bold">     30</span> 
+
+<span class="ansi-green-fg">&lt;template&gt;</span> in <span class="ansi-cyan-fg">top-level template code</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/site-packages/jinja2/runtime.py</span> in <span class="ansi-cyan-fg">_invoke</span><span class="ansi-blue-fg">(self, arguments, autoescape)</span>
+<span class="ansi-green-intense-fg ansi-bold">    677</span>     <span class="ansi-green-fg">def</span> _invoke<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> arguments<span class="ansi-blue-fg">,</span> autoescape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    678</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;This method is being swapped out by the async implementation.&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">--&gt; 679</span><span class="ansi-red-fg">         </span>rv <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>arguments<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    680</span>         <span class="ansi-green-fg">if</span> autoescape<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    681</span>             rv <span class="ansi-blue-fg">=</span> Markup<span class="ansi-blue-fg">(</span>rv<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;template&gt;</span> in <span class="ansi-cyan-fg">template</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-red-fg">TypeError</span>: unsupported format string passed to Undefined.__format__</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 

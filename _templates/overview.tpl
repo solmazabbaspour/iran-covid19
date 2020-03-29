@@ -1,8 +1,7 @@
 {# D, table, newcases, np, pd, days, digits, jdate_updated, jdate_since #}
 {% set COL_REGION = COL_REGION or 'Country/Region' %}
 {% set KPI_CASE = KPI_CASE or 'آمار کل دنیا' %}
-{% set KPIS_INFO = KPIS_INFO or [{'title': 'چین', 'prefix': 'China'}, {'title': 'اروپا', 'prefix': 'EU'}, {'title': 'آمریکا', 'prefix': 'US'}] %}
-{% set KPI_IRAN = {'title': 'ایران', 'name': 'Iran','prefix': 'ّIran'} %}
+{% set KPIS_INFO = KPIS_INFO or [ {'title': 'چین', 'prefix': 'China'}, {'title': 'اروپا', 'prefix': 'EU'}, {'title': 'آمریکا', 'prefix': 'US'}] %}
 {% set LEGEND_DOMAIN = LEGEND_DOMAIN or [10, 100, 1000, np.inf] %}
 {% set WIDTH_REGION, WIDTH_STRIP = 120, 140 %}
 {% set STRIP_WIDTH = (WIDTH_REGION // newcases.shape[1] + 1) %}
@@ -94,13 +93,13 @@
       {{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}
     </div>
   </div>
-  <div>
-    <div class="kpi-hed text-center">{{ KPI_IRAN }}</div>
+  <!-- <div>
+    <div class="kpi-hed text-center">ایران</div>
     <div class="d-flex kpi-box">
-      {{ kpi(title='کل موارد', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}
-      {{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}
+      {{ kpi(title='کل موارد', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}
+      {{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}
     </div>
-  </div>
+  </div> -->
   <p class="text-center text-uppercase jdate fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
   <div class="d-flex" style="justify-content:space-between;">
     {% for kpi in KPIS_INFO %}
