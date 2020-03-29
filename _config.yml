@@ -15,7 +15,7 @@ github_repo: "iran-covid19"
 github_username: solmazabbaspour
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value.
-url: "http://www.iran-covid19.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://solmazabbaspour.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 ###########################################################
 #########  Special Instructions for baseurl ###############
