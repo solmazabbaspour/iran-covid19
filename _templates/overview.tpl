@@ -1,7 +1,7 @@
 {# D, table, newcases, np, pd, days, digits, jdate_updated, jdate_since #}
 {% set COL_REGION = COL_REGION or 'Country/Region' %}
 {% set KPI_CASE = KPI_CASE or 'آمار کل دنیا' %}
-{% set KPIS_INFO = KPIS_INFO or [ {'title': 'چین', 'prefix': 'China'}, {'title': 'اروپا', 'prefix': 'EU'}, {'title': 'آمریکا', 'prefix': 'US'}] %}
+{% set KPIS_INFO = KPIS_INFO or [{'title': 'چین', 'prefix': 'China'}, {'title': 'اروپا', 'prefix': 'EU'}, {'title': 'آمریکا', 'prefix': 'US'}] %}
 {% set LEGEND_DOMAIN = LEGEND_DOMAIN or [10, 100, 1000, np.inf] %}
 {% set WIDTH_REGION, WIDTH_STRIP = 120, 140 %}
 {% set STRIP_WIDTH = (WIDTH_REGION // newcases.shape[1] + 1) %}
@@ -32,12 +32,12 @@
   </div>
 {%- endmacro %}
 
-<!-- {% macro toplinks() -%}
+{% macro toplinks() -%}
 <div class="text-center toplinksgithub">
   {% for link in TOPLINKS %}<a href="{{ link['href'] }}">{{ link['title'] }}</a>{% endfor %}
 </div>
-{%- endmacro %} -->
-<div class="summary">
+{%- endmacro %}
+
 {% macro narrative() -%}
 {% if KPI_CASE == 'آمار کل دنیا' %}
   در <b>{{ lastdays }} روز گذشته</b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> مورد جدید کرونا در دنیا گزارش شده است.
@@ -59,7 +59,7 @@
   ''
 {% endif %}
 {%- endmacro %}
-</div>
+
 {% macro plotstrip(arr) -%}
   <div class="d-flex" style="height:15px;">
     {% set colors = np.digitize(arr, LEGEND_DOMAIN) %}
@@ -83,7 +83,6 @@
     </g>
 </svg>
 {%- endmacro %}
-
 <div class="overview">
   <!-- {{ toplinks() }} -->
   <div>
@@ -93,20 +92,23 @@
       {{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}
     </div>
   </div>
-  <!-- <div>
+  <div>
     <div class="kpi-hed text-center">ایران</div>
     <div class="d-flex kpi-box">
       {{ kpi(title='کل موارد', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}
       {{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}
     </div>
-  </div> -->
-  <p class="text-center text-uppercase jdate fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
+  </div>
+   <p class="text-center text-uppercase jdate fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
+
   <div class="d-flex" style="justify-content:space-between;">
     {% for kpi in KPIS_INFO %}
     {{ kpiblocksm(**kpi) }}
     {% endfor %}
   </div>
-  <p class="text-center" style="font-size: 14px;max-width: 400px;">{{ narrative() }}</p>
+  <div class="summary">
+    <p class="text-center" style="font-size: 14px;max-width: 400px;">{{ narrative() }}</p>
+  </div>
   <!-- <table class="table" style="width:575px;">
     <thead>
       <tr>
@@ -147,7 +149,7 @@
     {% endfor %}
     </tbody>
   </table> -->
-</div>
+ </div>
 <style>
 .overview {
   min-width: 500px;
