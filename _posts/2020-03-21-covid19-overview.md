@@ -3,7 +3,7 @@ keywords: fastai
 description: مروری بر کل موارد کرونا ، مرگ و میر و موارد جدید براساس کشور.
 title: مروری کلی بر کرونا
 author: سولماز عباسپور و پراتاب واردهان
-categories: [overview, interactive]
+categories: [مرور]
 image: images/covid-overview.png
 permalink: /covid-overview/
 hide: false
@@ -69,7 +69,7 @@ layout: notebook
   <a href="../covid-overview/">کل دنیا</a><a href="../covid-overview-us/">US</a><a href="../covid-overview-europe/">Europe</a>
 </div> -->
   <div>
-    <div class="kpi-hed text-center">World</div>
+    <div class="kpi-hed text-center">آمار کل دنیا</div>
     <div class="d-flex kpi-box">
       <div class="kpi">
     <div class=" kname"></div>
@@ -136,7 +136,9 @@ layout: notebook
     
   </div>
   <p class="text-center" style="font-size: 14px;max-width: 400px;">
-  ''
+  در <b>۵ روز گذشته</b>, <b class="color-neg">۲۸۲,۳۹۲</b> مورد جدید کرونا در دنیا گزارش شده است.
+  از این تعداد <b class="color-neg">۱۶۰,۵۷۴</b> (۵۷%) مورد مربوط به  <b>اروپا</b> بوده است.
+  <b>در چین </b> تعداد <b class="color-neg">۵۰۱</b> مورد جدید در ۵ روز گذشته گزارش شده است.
 </p>
   <!-- <table class="table" style="width:575px;">
     <thead>
