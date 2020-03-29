@@ -10,9 +10,9 @@ layout: default
     {%- endif -%}
     <p class="post-meta post-meta-title">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <!-- <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
-      </time>
+      </time> -->
       {%- if page.modified_date -%}
         ~ 
         {%- assign mdate = page.modified_date | date_to_xmlschema -%}
@@ -21,13 +21,12 @@ layout: default
         </time>
       {%- endif -%}
       {%- if page.author -%}
-        • {% for author in page.author %}
+        by {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif %}
-       • {% include reading_time.html -%}
     </p>
 
     {% if page.categories.size > 0 and site.show_tags %}
@@ -42,9 +41,7 @@ layout: default
     {% if page.layout == 'notebook' %}
       {% if page.badges or page.badges == nil %}
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
-          {% unless page.hide_github_badge or site.default_badges.github != true %}{% include notebook_github_link.html %}{% endunless %}
-          {% unless page.hide_binder_badge or site.default_badges.binder != true  %}{% include notebook_binder_link.html %}{% endunless %}
-          {% unless page.hide_colab_badge or site.default_badges.colab != true %}{% include notebook_colab_link.html %}{% endunless %}
+          {% include notebook_github_link.html %}{% include notebook_colab_link.html %}
         </div>
       {% endif -%}
     {% endif -%}

@@ -1,13 +1,20 @@
 ---
-layout: page
-title: About Me
+layout: default
+title:   درباره ما
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
-
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+## مشخصات این پروژه
 
 
+  اصل این داشبوردها به زبان انگلیسی توسط [ هامل حسین](https://twitter.com/HamelHusain) و [همکاری تیم مجازی](https://github.com/github/covid19-dashboard#contributors-) پشتیبانی میشود.
 
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+این سایت توسط [سولماز عباسپور](https://github.com/solmazabbaspour) به زبان فارسی و با نگاهی عمیقتر به أمار ایران تهیه و بروزرسانی شده است.
+
+منبع اصلی داده ها - [ مرکز داده کوید-۱۹ جان هاپکینز ](https://github.com/CSSEGISandData/COVID-19  ) میباشد.
+
+
+
+## پیش زمینه
+
+ تیم اصلی این پروژه  داده های مربوط به بیماری همه گیر کوید-۱۹  را جمع آوری و تجزیه و تحلیل میکنند. در حال حاضر دانشمندان با مشکل اشتراک داده مواجه اند ، بنابراین ما از این پروژه برای کمک به اشتراک داده ها و اطلاعات استفاده کردیم. این پروژه با هدف ارائه روشی آسان  برای متخصصان داده برای به اشتراک گذاشتن داشبورد (که به طور خودکار با داده های جدید به روز می شوند) انجام شده است.

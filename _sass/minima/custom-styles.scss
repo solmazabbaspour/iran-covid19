@@ -1,6 +1,6 @@
 /*-----------------------------------*/
 /*--- IMPORT STYLES FOR FASTPAGES ---*/
-@import "minima/fastpages-styles";   
+@import "minima/fastpages-styles";
 
 
 
@@ -8,4 +8,49 @@
 /*----- ADD YOUR STYLES BELOW -------*/
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-@import "minima/fastpages-dracula-highlight"; 
+@import "minima/fastpages-dracula-highlight";
+
+// add additional spacing between list items
+li {
+  margin-bottom: 0.25rem;
+}
+
+// force RSS icon to display properly
+.svg-icon {
+  width: 23px;
+  height: 23px;
+}
+
+html, .footer-col, .site-header {
+  direction: rtl;
+  font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important ;
+}
+
+.site-title {
+  float: right;
+}
+
+.footer-col-wrapper {
+  display: none;
+}
+
+ .trigger {
+  float: left !important;
+
+}
+
+.page-link a {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+
+  color: yellow;
+}
+
+.jdate {
+  color: green;
+  font-style: bold;
+}
+
+.site-nav .page-link {
+  padding: 10px !important;
+}
