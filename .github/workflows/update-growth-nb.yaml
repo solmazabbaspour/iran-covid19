@@ -1,8 +1,9 @@
 name: Update Notebooks And Refresh Page
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron:  '0 */6 * * *'
+  issues:
+    types: [opened]
 
 jobs:
   update-notebooks:
