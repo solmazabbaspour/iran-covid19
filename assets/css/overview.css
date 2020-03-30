@@ -80,3 +80,19 @@
   line-height: 10px;
   padding-bottom: 10px !important;
 }
+
+.overview .fs9 {
+  font-size: 12px;
+  color: green;
+}
+.overview .d-flex {
+  display: flex;
+}
+.overview .text-center { text-align: center !important; }
+.overview .text-left { text-align: left !important; }
+.overview .text-right { text-align: right !important; }
+.overview .text-uppercase { text-transform: uppercase !important; }
+.overview div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
