@@ -42,6 +42,7 @@ minima:
   social_links:
     twitter: s_abbaspour
     github: solmazabbaspour
+    linkedin: sabbaspour
 
 # Set this to true to get LaTeX math equation support
 use_math: true
