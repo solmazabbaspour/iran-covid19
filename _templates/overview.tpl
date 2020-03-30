@@ -1,6 +1,6 @@
 {# D, table, newcases, np, pd, days, digits, jdate_updated, jdate_since #}
 {% set COL_REGION = COL_REGION or 'Country/Region' %}
-{% set KPI_CASE = KPI_CASE or 'آمار کل دنیا' %}
+{% set KPI_CASE = KPI_CASE or 'دنیا' %}
 {% set KPIS_INFO = KPIS_INFO or [{'title': 'چین', 'prefix': 'China'}, {'title': 'اروپا', 'prefix': 'EU'}, {'title': 'آمریکا', 'prefix': 'US'}] %}
 {% set LEGEND_DOMAIN = LEGEND_DOMAIN or [10, 100, 1000, np.inf] %}
 {% set WIDTH_REGION, WIDTH_STRIP = 120, 140 %}
@@ -18,7 +18,7 @@
   <div class="kpi">
     <div class=" kname">{{ title }}</div>
     <div class="num">{{ digits.en_to_fa('{0:,.0f}'.format(number)) }}</div>
-    <div class="grow {{ growcls }}">(<b>{{ digits.en_to_fa('{0:+,.0f}'.format(growth)) }}</b>)</div>
+    <div class="grow color-neg{{ growcls }}">(<b>{{ digits.en_to_fa('{0:+,.0f}'.format(growth)) }}</b>)</div>
   </div>
 {%- endmacro %}
 
@@ -26,8 +26,9 @@
   <div class="kpi-sm">
     <div class="kpi-hed">{{ title }}</div>
     <div class="d-flex kpi-box">
-      {{ kpi(title='کل موارد', name='Cases', number=D[prefix + ' Cases'], growth=D[prefix + ' Cases (+)']) }}
-      {{ kpi(title='مرگ', name='Deaths', number=D[prefix + ' Deaths'], growth=D[prefix + ' Deaths (+)']) }}
+      <span class="cases">{{ kpi(title='کل موارد', name='Cases', number=D[prefix + ' Cases'], growth=D[prefix + ' Cases (+)']) }}</span>
+      <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D[prefix + ' Deaths'], growth=D[prefix + ' Deaths (+)']) }} </span>
+
     </div>
   </div>
 {%- endmacro %}
@@ -39,10 +40,10 @@
 {%- endmacro %}
 
 {% macro narrative() -%}
-{% if KPI_CASE == 'آمار کل دنیا' %}
+{% if KPI_CASE == 'دنیا' %}
   در <b>{{ lastdays }} روز گذشته</b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> مورد جدید کرونا در دنیا گزارش شده است.
   از این تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['EU Cases (+)'])) }}</b> ({{ digits.en_to_fa("{0:.0%}".format(D['EU Cases (+)'] / D['Cases (+)'])) }}) مورد مربوط به  <b>اروپا</b> بوده است.
-  <b>در چین </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['China Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.
+  <b> در ایران </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Iran Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.
 {% elif KPI_CASE == 'US' %}
     در <b>{{ lastdays }} روز گذشته</b></b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> new Coronavirus cases have been reported in the US.
   Of which <b class="color-neg">{{  digits.en_to_fa('{0:,.0f}'.format(D['NY Cases (+)'])) }}</b> ({{ digits.en_to_fa( "{0:.0%}".format(D['NY Cases (+)'] / D['Cases (+)'])) }}) are from <b>New York</b> State.
@@ -84,31 +85,32 @@
 </svg>
 {%- endmacro %}
 <div class="overview">
-  <!-- {{ toplinks() }} -->
-  <div>
-    <div class="kpi-hed text-center">{{ KPI_CASE }}</div>
-    <div class="d-flex kpi-box">
-      {{ kpi(title='کل موارد', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}
-      {{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}
-    </div>
-  </div>
-  <div>
-    <div class="kpi-hed text-center">ایران</div>
-    <div class="d-flex kpi-box">
-      {{ kpi(title='کل موارد', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}
-      {{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}
-    </div>
-  </div>
-   <p class="text-center text-uppercase jdate fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
 
-  <div class="d-flex" style="justify-content:space-between;">
+  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
+  <p class="text-center narrative">{{ narrative() }}</p>
+  <!-- {{ toplinks() }} -->
+  <div class="item">
+    <div class="d-flex kpi-hed text-center">{{ KPI_CASE }}</div>
+    <div class="d-flex kpi-box">
+      <span class="cases">{{ kpi(title='کل موارد', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}</span>
+      <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}</span>
+    </div>
+  </div>
+  <div>
+    <div class="d-flex kpi-hed text-center">ایران</div>
+    <div class="d-flex kpi-box">
+      <span class="cases">{{ kpi(title='کل موارد', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}</span>
+      <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}</span>
+    </div>
+  </div>
+
+
+  <div class="item d-flex" style="justify-content:space-between;">
     {% for kpi in KPIS_INFO %}
     {{ kpiblocksm(**kpi) }}
     {% endfor %}
   </div>
-  <div class="summary">
-    <p class="text-center" style="font-size: 14px;max-width: 400px;">{{ narrative() }}</p>
-  </div>
+
   <!-- <table class="table" style="width:575px;">
     <thead>
       <tr>
@@ -152,11 +154,84 @@
  </div>
 <style>
 .overview {
-  min-width: 500px;
-  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important;
 }
-.overview .toplinksgithub a {
+.item {
+  width: 48%;
+  height: 48%;
+  margin-bottom: 2%;
+}
+
+.item:nth-child(1n) {
+  width: 100%;
+}
+.item:nth-child(3n) {
+  width: 100%;
+}
+.cases{
+  padding: 20px;
+}
+.narrative {
+  font-size: 16px;
+  max-width: 400px;
+  line-height: 26px;
+}
+.kname {
+    color: black;
+    padding-bottom: 10px !important;
+}
+.overview .kpi-hed {
+  font-weight: bold;
+  font-size: 20px;
+}
+.overview .kpi-box {
+  justify-content: space-around;
+  background: #F2CF66;
+  padding: 10px 0 !important;
+  margin: 20px 0 !important;
+  border-radius: 10px;
+  color: #FFF;
+	text-decoration: none;
+}
+.overview .kpi .grow {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 10px !important;
+
+}
+.color-neg{
+  color: #FF5733;
+}
+.overview .kpi .num {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.overview p .color-neg {
+  padding: 0 5px;
+}
+.overview .kpi .kname {
+  font-size: 12px;
+}
+.overview .kpi-sm .kpi-hed {
+  font-size: 16px;
+  line-height: 10px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.overview .kpi-sm .num {
+  font-size: 18px;
+  line-height: 20px;
+}
+.overview .kpi-sm .kname {
+  font-size: 11px;
+  line-height: 10px;
+  padding-bottom: 10px !important;
+}
+/*.overview .toplinksgithub a {
   background: #d3d3d3;
   font-size: 14px;
   color: #1d87ae;
@@ -173,62 +248,16 @@
 .overview b {
   font-weight: bolder;
 }
-.overview .kpi-hed {
-  font-weight: bold;
-  font-size: 20px;
-}
-.overview .kpi-box {
-  justify-content: space-around;
-  background: #F2CF66;
-  padding: 10px 0 !important;
-  margin: 5px 0 !important;
-  min-width: 180px;
-  border-radius: 10px;
-  color: #FFF;
-	text-decoration: none;
-}
-.summary {
-  padding-top: 30px !important;
-}
-.overview .kpi .num {
-  font-size: 40px;
-  line-height: 40px;
-  font-weight: bold;
-}
-.overview .kpi .grow {
-  line-height: 12px;
-  font-size: 12px;
-  padding-top: 10px !important;
-}
+
 .overview .table .change.pos , .overview .kpi .grow.pos {
   color: #118822;
 }
 .overview .table .change.neg, .overview .kpi .grow, .color-neg {
   color: #cc1100;
 }
-.overview p .color-neg {
-  padding: 0 5px;
-}
-.overview .kpi .kname {
-  font-size: 12px;
-}
-.overview .kpi-sm .kpi-hed {
-  font-size: 16px;
-  line-height: 10px;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
-.overview .kpi-sm .num {
-  font-size: 20px;
-  line-height: 20px;
-}
-.overview .kpi-sm .kname {
-  font-size: 11px;
-  line-height: 10px;
-  color: black;
-  padding-bottom: 10px !important;
-}
-.overview .table {
+*/
+
+/*.overview .table {
   border-collapse: collapse;
   margin: auto !important;
   text-align: right;
@@ -264,7 +293,7 @@
 }
 .overview .table thead {
   border-bottom: 1px solid black;
-}
+}*/
 .overview .fs9 {
   font-size: 12px;
   color: green;

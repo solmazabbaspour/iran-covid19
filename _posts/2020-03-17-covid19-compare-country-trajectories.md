@@ -83,10 +83,10 @@ layout: notebook
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-<div id="altair-viz-696fb99b96dc403194928f7baa0f32d5"></div>
+<div id="altair-viz-12f237de3ac041d7ab2e3670bf47d118"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
-    const outputDiv = document.getElementById("altair-viz-696fb99b96dc403194928f7baa0f32d5");
+    const outputDiv = document.getElementById("altair-viz-12f237de3ac041d7ab2e3670bf47d118");
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
@@ -158,10 +158,10 @@ layout: notebook
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-<div id="altair-viz-4bfb8f21d025489fad5f01e3810e58d4"></div>
+<div id="altair-viz-cdd4851288c14b2db5a05b8245931200"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
-    const outputDiv = document.getElementById("altair-viz-4bfb8f21d025489fad5f01e3810e58d4");
+    const outputDiv = document.getElementById("altair-viz-cdd4851288c14b2db5a05b8245931200");
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
