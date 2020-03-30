@@ -1,0 +1,82 @@
+
+.overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important;
+}
+.item {
+  width: 48%;
+  height: 48%;
+  margin-bottom: 2%;
+}
+.region {
+  justify-content: space-between;
+}
+.item:nth-child(1n) {
+  width: 100%;
+}
+.item:nth-child(3n) {
+  width: 100%;
+}
+.cases{
+  padding: 20px;
+}
+.narrative {
+  font-size: 16px;
+  max-width: 400px;
+  line-height: 26px;
+}
+.kname {
+    color: black;
+    padding-bottom: 10px !important;
+}
+.overview .kpi-hed {
+  font-weight: bold;
+  align-items: center;
+  font-size: 20px;
+}
+.overview .kpi-box {
+  justify-content: space-around;
+  background: #F2CF66;
+  padding: 10px 0 !important;
+  margin: 20px 0 !important;
+  border-radius: 10px;
+  color: #FFF;
+	text-decoration: none;
+}
+.overview .kpi .grow {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 10px !important;
+
+}
+.color-neg{
+  color: #FF5733;
+}
+.overview .kpi .num {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.overview p .color-neg {
+  padding: 0 5px;
+}
+.overview .kpi .kname {
+  font-size: 12px;
+}
+.overview .kpi-sm .kpi-hed {
+  font-size: 16px;
+  line-height: 10px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.overview .kpi-sm .num {
+  font-size: 18px;
+  line-height: 20px;
+}
+.overview .kpi-sm .kname {
+  font-size: 11px;
+  line-height: 10px;
+  padding-bottom: 10px !important;
+}

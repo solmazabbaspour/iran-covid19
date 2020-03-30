@@ -23,20 +23,14 @@
 {%- endmacro %}
 
 {% macro kpiblocksm(prefix='', title=KPI_CASE) -%}
-  <div class="kpi-sm">
-    <div class="kpi-hed">{{ title }}</div>
-    <div class="d-flex kpi-box">
-      <span class="cases">{{ kpi(title='کل موارد', name='Cases', number=D[prefix + ' Cases'], growth=D[prefix + ' Cases (+)']) }}</span>
-      <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D[prefix + ' Deaths'], growth=D[prefix + ' Deaths (+)']) }} </span>
-
-    </div>
+<div >
+  <div class="d-flex kpi-hed text-center">{{ title }}</div>
+  <div class="d-flex kpi-box">
+    <span class="cases">{{ kpi(title='کل موارد', name='Cases', number=D[prefix + ' Cases'], growth=D[prefix + ' Cases (+)']) }}</span>
+    <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D[prefix + ' Deaths'], growth=D[prefix + ' Deaths (+)']) }} </span>
   </div>
-{%- endmacro %}
-
-{% macro toplinks() -%}
-<div class="text-center toplinksgithub">
-  {% for link in TOPLINKS %}<a href="{{ link['href'] }}">{{ link['title'] }}</a>{% endfor %}
 </div>
+
 {%- endmacro %}
 
 {% macro narrative() -%}
@@ -44,19 +38,6 @@
   در <b>{{ lastdays }} روز گذشته</b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> مورد جدید کرونا در دنیا گزارش شده است.
   از این تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['EU Cases (+)'])) }}</b> ({{ digits.en_to_fa("{0:.0%}".format(D['EU Cases (+)'] / D['Cases (+)'])) }}) مورد مربوط به  <b>اروپا</b> بوده است.
   <b> در ایران </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Iran Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.
-{% elif KPI_CASE == 'US' %}
-    در <b>{{ lastdays }} روز گذشته</b></b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> new Coronavirus cases have been reported in the US.
-  Of which <b class="color-neg">{{  digits.en_to_fa('{0:,.0f}'.format(D['NY Cases (+)'])) }}</b> ({{ digits.en_to_fa( "{0:.0%}".format(D['NY Cases (+)'] / D['Cases (+)'])) }}) are from <b>New York</b> State.
-  <b>Washington</b> has reported <b class="color-neg">{{ '{0:,.0f}'.format(D['WA Cases (+)']) }}</b> new cases in the last {{ lastdays }} days.
-{% elif KPI_CASE == 'Europe' %}
-    در <b>{{ lastdays }} روز گذشته</b>/b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b>   مورد جدید در اروپا گزارش شده است.
-  که تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['IT Cases (+)'])) }}</b> ({{ digits.en_to_fa("{0:.0%}".format(D['IT Cases (+)'] / D['Cases (+)'])) }}) مورد مربوط به <b>ایتالیا</b>.
-  <b>اسپانیا</b> تعداد <b class="color-neg">{{ '{0:,.0f}'.format(D['SP Cases (+)']) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش داده است.
-{% elif KPI_CASE == 'Asia' %}
-  در <b>{{ lastdays }} روز گذشته</b></b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> مورد جدید در آسیا گزارش شده است
-  تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['CN Cases (+)'])) }}</b> ({{ digits.en_to_fa("{0:.0%}".format(D['CN Cases (+)'] / D['Cases (+)'])) }}) مورد مربوط به <b>چین</b>.
-  <b>ایران</b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['IN Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} رور گذشته گزارش داده است.
-{% else %}
   ''
 {% endif %}
 {%- endmacro %}
@@ -88,9 +69,8 @@
 
   <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>
   <p class="text-center narrative">{{ narrative() }}</p>
-  <!-- {{ toplinks() }} -->
   <div class="item">
-    <div class="d-flex kpi-hed text-center">{{ KPI_CASE }}</div>
+    <div class="d-flex kpi-hed text-center ">{{ KPI_CASE }}</div>
     <div class="d-flex kpi-box">
       <span class="cases">{{ kpi(title='کل موارد', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}</span>
       <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}</span>
@@ -105,208 +85,9 @@
   </div>
 
 
-  <div class="item d-flex" style="justify-content:space-between;">
+
+  <div class="item" >
     {% for kpi in KPIS_INFO %}
     {{ kpiblocksm(**kpi) }}
     {% endfor %}
   </div>
-
-  <!-- <table class="table" style="width:575px;">
-    <thead>
-      <tr>
-        <th class="text-right" style="width:{{ WIDTH_REGION }}px;"></th>
-        <th class="text-left" style="width:{{ WIDTH_STRIP }}px;">{{ legend() }}</th>
-        <th colspan="7"></th>
-      </tr>
-      <tr>
-        <th class="text-right" style="width:{{ WIDTH_REGION }}px;">{{ {'Country/Region': 'Country', 'Province/State': 'State'}.get(COL_REGION, 'Location') }}</th>
-        <th class="text-left" style="width:{{ WIDTH_STRIP }}px;">موارد جدید</th>
-        <th class="text-left" colspan="2">تعداد مبتلایان</th>
-        <th colspan="2">مرگ و میر</th>
-        <th class="fs9" >نسبت مرگ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="font-size:9px;">
-        <td></td>
-        <td style="display:flex;justify-content:space-between;">
-          <div>{{ pd.to_datetime(newcases.columns[0]).strftime('%b. %d') }}</div>
-          <div>{{ pd.to_datetime(newcases.columns[-1]).strftime('%b. %d') }}</div>
-        </td>
-        <td></td>
-        <td colspan="4" class="text-left change" style="font-size: 9px;">(+ جدید) از {{ jdate_since }}</td>
-        <td></td>
-        <td></td>
-      </tr>
-    {% for index, row in table.iterrows() %}
-      <tr>
-        <td class="mw"><b>{{ row[COL_REGION] }}</b></td>
-        <td style="vertical-align: middle;">{{ plotstrip(arr=newcases.loc[row[COL_REGION]].values) }}</td>
-        <td class="pl1"><b>{{ '{0:,.0f}'.format(row['Cases']) }}</b></td>
-        <td class="change neg">(<b>{{ '{0:+,.0f}'.format(row['Cases (+)']) }}</b>)</td>
-        <td class="pl1">{{ '{0:,.0f}'.format(row['Deaths']) }}</td>
-        <td class="change neg">(<b>{{ '{0:+,.0f}'.format(row['Deaths (+)']) }}</b>)</td>
-        <td class="pl1">{{ row['Fatality Rate'] }}%</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table> -->
- </div>
-<style>
-.overview {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important;
-}
-.item {
-  width: 48%;
-  height: 48%;
-  margin-bottom: 2%;
-}
-
-.item:nth-child(1n) {
-  width: 100%;
-}
-.item:nth-child(3n) {
-  width: 100%;
-}
-.cases{
-  padding: 20px;
-}
-.narrative {
-  font-size: 16px;
-  max-width: 400px;
-  line-height: 26px;
-}
-.kname {
-    color: black;
-    padding-bottom: 10px !important;
-}
-.overview .kpi-hed {
-  font-weight: bold;
-  font-size: 20px;
-}
-.overview .kpi-box {
-  justify-content: space-around;
-  background: #F2CF66;
-  padding: 10px 0 !important;
-  margin: 20px 0 !important;
-  border-radius: 10px;
-  color: #FFF;
-	text-decoration: none;
-}
-.overview .kpi .grow {
-  font-size: 12px;
-  font-weight: normal;
-  padding-top: 10px !important;
-
-}
-.color-neg{
-  color: #FF5733;
-}
-.overview .kpi .num {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-}
-.overview p .color-neg {
-  padding: 0 5px;
-}
-.overview .kpi .kname {
-  font-size: 12px;
-}
-.overview .kpi-sm .kpi-hed {
-  font-size: 16px;
-  line-height: 10px;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
-.overview .kpi-sm .num {
-  font-size: 18px;
-  line-height: 20px;
-}
-.overview .kpi-sm .kname {
-  font-size: 11px;
-  line-height: 10px;
-  padding-bottom: 10px !important;
-}
-/*.overview .toplinksgithub a {
-  background: #d3d3d3;
-  font-size: 14px;
-  color: #1d87ae;
-  margin: 10px;
-  padding: 2px 10px;
-}
-.overview p {
-  margin: 6px auto !important;
-  padding: 10px;
-}
-@media screen and (max-width: 660px) {
-  .overview p { max-width: none !important; }
-}
-.overview b {
-  font-weight: bolder;
-}
-
-.overview .table .change.pos , .overview .kpi .grow.pos {
-  color: #118822;
-}
-.overview .table .change.neg, .overview .kpi .grow, .color-neg {
-  color: #cc1100;
-}
-*/
-
-/*.overview .table {
-  border-collapse: collapse;
-  margin: auto !important;
-  text-align: right;
-  margin-top: 14px;
-  color: black;
-  font-size: 13px;
-  display: table !important;
-}
-.overview .table .change {
-  color: #999;
-  font-size: 80%;
-  text-align: start;
-  vertical-align: inherit;
-  font-weight: normal;
-  padding-left: 1px !important;
-}
-.overview .table th {
-  font-weight: normal;
-}
-.overview .table tbody tr {
-  border-bottom: 1px solid #eee;
-  background: none;
-}
-.overview .table td, .overview .table th {
-  padding: 1px 1px 1px 10px !important;
-  vertical-align: middle;
-  border: none;
-  background: none;
-}
-.overview .table th {
-  text-align: center;
-  text-transform: uppercase;
-}
-.overview .table thead {
-  border-bottom: 1px solid black;
-}*/
-.overview .fs9 {
-  font-size: 12px;
-  color: green;
-}
-.overview .d-flex {
-  display: flex;
-}
-.overview .text-center { text-align: center !important; }
-.overview .text-left { text-align: left !important; }
-.overview .text-right { text-align: right !important; }
-.overview .text-uppercase { text-transform: uppercase !important; }
-.overview div {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-</style>
