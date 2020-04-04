@@ -4,7 +4,7 @@ description: مروری بر مبتلایان کرونا ، مرگ و میر و 
 title: کرونا در خاورمیانه
 comments: true
 author: سولماز عباسپور
-categories: [ خاورمیانه ،مرور]
+categories: [ خاورمیانه, مرور]
 image: images/covid-middle-east.png
 permalink: /covid-middle-east-overview/
 hide: false
@@ -80,7 +80,7 @@ layout: notebook
     <div class="d-flex kpi-hed text-center">خاورمیانه</div>
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
-    <div class=" kname">مبتلانیان</div>
+    <div class=" kname">تعداد مبتلایان</div>
     <div class="num">۸۹,۸۹۰</div>
     <div class="grow color-neg">(<b>+۳۲,۸۳۱</b>)</div>
   </div></span>
@@ -95,7 +95,7 @@ layout: notebook
     <div class="d-flex kpi-hed text-center">ایران</div>
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
-    <div class=" kname">کل مبتلانیان</div>
+    <div class=" kname">تعداد مبتلایان</div>
     <div class="num">۵۳,۱۸۳</div>
     <div class="grow color-neg">(<b>+۱۴,۸۷۴</b>)</div>
   </div></span>

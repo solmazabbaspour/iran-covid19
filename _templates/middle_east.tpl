@@ -82,14 +82,14 @@
   <div class="item">
     <div class="d-flex kpi-hed text-center">{{ KPI_CASE }}</div>
     <div class="d-flex kpi-box">
-      <span class="cases">{{ kpi(title='مبتلانیان', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}</span>
+      <span class="cases">{{ kpi(title='تعداد مبتلایان', name='Confirmed Cases', number=D['Cases'], growth=D['Cases (+)']) }}</span>
       <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}</span>
     </div>
   </div>
   <div>
     <div class="d-flex kpi-hed text-center">ایران</div>
     <div class="d-flex kpi-box">
-      <span class="cases">{{ kpi(title='کل مبتلانیان', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}</span>
+      <span class="cases">{{ kpi(title='تعداد مبتلایان', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}</span>
       <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}</span>
     </div>
   </div>
