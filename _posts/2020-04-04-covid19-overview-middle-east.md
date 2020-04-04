@@ -72,8 +72,7 @@ layout: notebook
     <p class="text-center narrative">
 در <b>۵ روز گذشته</b>, <b class="color-neg">۳۲,۸۳۱</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
   <b> در ایران </b> تعداد <b class="color-neg">۱۴,۸۷۴</b> مورد جدید در ۵ روز گذشته گزارش شده است.
-  <b>در ترکیه </b> تعداد <b class="color-neg">۱۱,۷۰۴</b> مورد جدید در ۵ روز گذشته گزارش شده است.% else %}
-  ''
+  <b>در ترکیه </b> تعداد <b class="color-neg">۱۱,۷۰۴</b> مورد جدید در ۵ روز گذشته گزارش شده است.
 </p>
 
   <div class="item">
@@ -238,7 +237,7 @@ layout: notebook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>تحلیل اصلی از <a href="https://twitter.com/PratapVardhan">پراتاپ واردهان</a><sup class="footnote-ref" id="fnref-۱"><a href="#fn-۱">1</a></sup></p>
+<p>تحلیل اصلی از <a href="http://www.solmazabbaspour.com/">سولماز عباسپور</a><sup class="footnote-ref" id="fnref-۱"><a href="#fn-۱">1</a></sup></p>
 <div class="footnotes">
 <hr>
 <ol><li id="fn-۱"><p>منبع: <a href="https://systems.jhu.edu/research/public-health/ncov/">"2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE"</a> <a href="https://github.com/CSSEGISandData/COVID-19">GitHub repository</a>. لینک به صفحه <a href="https://github.com/pratapvardhan/notebooks/blob/master/covid19/covid19-compare-country-trajectories.ipynb">اصلی</a>.<a href="#fnref-۱" class="footnote">&#8617;</a></p></li>

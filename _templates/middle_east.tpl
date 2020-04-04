@@ -46,8 +46,7 @@
 {% elif KPI_CASE ==  'خاورمیانه' %}
 در <b>{{ lastdays }} روز گذشته</b>, <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Cases (+)'])) }}</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
   <b> در ایران </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Iran Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.
-  <b>در ترکیه </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Turkey Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.% else %}
-  ''
+  <b>در ترکیه </b> تعداد <b class="color-neg">{{ digits.en_to_fa('{0:,.0f}'.format(D['Turkey Cases (+)'])) }}</b> مورد جدید در {{ lastdays }} روز گذشته گزارش شده است.
 {% endif %}
 {%- endmacro %}
 
