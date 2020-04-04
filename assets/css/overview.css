@@ -36,6 +36,20 @@
   align-items: center;
   font-size: 20px;
 }
+.overview .toplinksgithub a {
+  background: #d3d3d3;
+  font-size: 14px;
+  color: #1d87ae;
+  margin: 10px;
+  padding: 2px 10px;
+}
+.overview .table .change.neg, .overview .kpi .grow, .color-neg {
+  color: #cc1100;
+}
+.overview p .color-neg {
+  background: #ececec;
+  padding: 0 5px;
+}
 .overview .kpi-box {
   justify-content: space-around;
   background: #F2CF66;
@@ -95,4 +109,42 @@
 .overview div {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.overview .table {
+  border-collapse: collapse;
+  margin: auto !important;
+  text-align: right;
+  margin-top: 14px;
+  color: black;
+  font-size: 13px;
+  display: table !important;
+}
+.overview .table .change {
+  color: #999;
+  font-size: 80%;
+  text-align: start;
+  vertical-align: inherit;
+  font-weight: normal;
+  padding-left: 1px !important;
+}
+.overview .table th {
+  font-weight: normal;
+}
+.overview .table tbody tr {
+  border-bottom: 1px solid #eee;
+  background: none;
+}
+.overview .table td, .overview .table th {
+  padding: 1px 1px 1px 10px !important;
+  vertical-align: middle;
+  border: none;
+  background: none;
+}
+.overview .table th {
+  text-align: center;
+  text-transform: uppercase;
+}
+.overview .table thead {
+  border-bottom: 1px solid black;
 }
