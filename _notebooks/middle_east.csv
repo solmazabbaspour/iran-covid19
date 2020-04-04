@@ -1,17 +1,17 @@
-Country,Name,Continent,Group1,Color
-Egypt,Egypt,Asia,,
-Iran,Iran,Asia,,
-Turkey,Turkey,Asia,,
-Iraq,Iraq,Asia,,
-Saudi Arabia,Saudi Arabia,Asia,,
-Yemen,Yemen,Asia,,
-Syria,Syria,Asia,,
-Jordan,Jordan,Asia,,
-United Arab Emirates,United Arab Emirates,Asia,,
-Israel,Israel,Asia,,
-Lebanon,Lebanon,Asia,,
-occupied Palestinian territory,occupied Palestinian territory,Asia,,
-Oman,Oman,Asia,,
-Kuwait,Kuwait,Asia,,
-Qatar,Qatar,Asia,,
-Bahrain,Bahrain,Asia,,
+Country,Name
+Egypt,Egypt
+Iran,Iran
+Turkey,Turkey
+Iraq,Iraq
+Saudi Arabia,Saudi Arabia
+Yemen,Yemen
+Syria,Syria
+Jordan,Jordan
+United Arab Emirates,United Arab Emirates
+Israel,Israel
+Lebanon,Lebanon
+occupied Palestinian territory,occupied Palestinian territory
+Oman,Oman
+Kuwait,Kuwait
+Qatar,Qatar
+Bahrain,Bahrain
