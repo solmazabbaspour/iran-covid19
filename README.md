@@ -5,6 +5,13 @@
 
 **Website**: www.iran-covid19.com
 
+ در این سایت تلاش کرده ایم آمار مربوط به کرونا را با تمرکزی بیشتر بر ایران تجزیه و تحلیل کنیم.  منحنی های این سایت روزانه دو بار با داده های جدید  بروزرسانی می شوند..
+
+
+  اصل این داشبوردها به زبان انگلیسی توسط [ هامل حسین](https://twitter.com/HamelHusain) و [همکاری تیم مجازی](https://github.com/github/covid19-dashboard#contributors-) پشتیبانی میشود.
+
+
+
 This project has been inspired by [covid19dashboards](http://covid19dashboards.com/) project. The dashboards are in Farsi and have been filtered with a focus on Iran's COVID-19 situation.
 
 ## Description
