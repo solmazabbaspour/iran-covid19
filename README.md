@@ -53,7 +53,7 @@ Some areas that we would need help:
 
 If you are interested please [contact me](https://twitter.com/s_abbaspour) and I can add you as a collaborator.
 
-## Collaborators
+## Contributors
 
 | Member | Role|
 |--------| ---|
