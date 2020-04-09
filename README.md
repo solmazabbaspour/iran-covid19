@@ -57,5 +57,5 @@ If you are interested please [contact me](https://twitter.com/s_abbaspour) and I
 
 | Member | Role|
 |--------| ---|
-|![solmaz](https://avatars2.githubusercontent.com/u/5240896?v=4&s=200) | Admin |
+|![solmaz](https://avatars2.githubusercontent.com/u/5240896?v=4&s=100) | Admin |
 |Nilou | Frontend developer|
