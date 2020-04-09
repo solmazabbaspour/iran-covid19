@@ -46,9 +46,16 @@ Here is an example of the [country-death-trajectories](https://colab.research.go
 Some areas that we would need help:
 1. Frontend development and making the charts readable on smaller devices
 2. State specific data for Iran
-3. Adding more Jupyter notebooks. 
+3. Adding more Jupyter notebooks.
    - A good place is to go through the [original website](https://github.com/github/covid19-dashboard/) and translate them to farsi
    - Add filters with a focus on Iran's cases
 
 
 If you are interested please [contact me](https://twitter.com/s_abbaspour) and I can add you as a collaborator.
+
+## Collaborators
+
+| Member | Role|
+|--------| ---|
+|![solmaz](https://avatars2.githubusercontent.com/u/5240896?v=4) | Admin |
+|![Nilou](https://avatars2.githubusercontent.com/u/7594907?v=4) | Frontend developer|

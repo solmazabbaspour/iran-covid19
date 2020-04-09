@@ -86,16 +86,14 @@
       <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Deaths'], growth=D['Deaths (+)']) }}</span>
     </div>
   </div>
-  <div>
+  <div class="item">
     <div class="d-flex kpi-hed text-center">ایران</div>
     <div class="d-flex kpi-box">
       <span class="cases">{{ kpi(title='کل موارد', name='Cases', number=D['Iran Cases'], growth=D['Iran Cases (+)']) }}</span>
       <span class="cases">{{ kpi(title='مرگ', name='Deaths', number=D['Iran Deaths'], growth=D['Iran Deaths (+)']) }}</span>
     </div>
   </div>
-
-
-  <div class="item d-flex" style="justify-content:space-between;">
+  <div class="item overview" style="justify-content:space-between;">
     {% for kpi in KPIS_INFO %}
     {{ kpiblocksm(**kpi) }}
     {% endfor %}

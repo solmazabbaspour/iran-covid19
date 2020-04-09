@@ -68,11 +68,11 @@ layout: notebook
     <!-- <div class="text-center toplinksgithub">
   <a href="../covid-overview/">کل دنیا</a><a href="../covid-middle-east-overview/">خاورمیانه</a>
 </div> -->
-  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۱۸ / ۰۱ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
+  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۲۰ / ۰۱ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
     <p class="text-center narrative">
-در <b>۵ روز گذشته</b>, <b class="color-neg">۳۵,۰۴۵</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
-  <b> در ایران </b> تعداد <b class="color-neg">۱۲,۹۰۷</b> مورد جدید در ۵ روز گذشته گزارش شده است.
-  <b>در ترکیه </b> تعداد <b class="color-neg">۱۴,۵۳۸</b> مورد جدید در ۵ روز گذشته گزارش شده است.
+در <b>۵ روز گذشته</b>, <b class="color-neg">۳۵,۹۳۹</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
+  <b> در ایران </b> تعداد <b class="color-neg">۱۱,۴۰۳</b> مورد جدید در ۵ روز گذشته گزارش شده است.
+  <b>در ترکیه </b> تعداد <b class="color-neg">۱۷,۳۰۵</b> مورد جدید در ۵ روز گذشته گزارش شده است.
 </p>
 
   <div class="item">
@@ -80,13 +80,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">تعداد مبتلایان</div>
-    <div class="num">۱۱۱,۱۴۸</div>
-    <div class="grow color-neg">(<b>+۳۵,۰۴۵</b>)</div>
+    <div class="num">۱۲۵,۸۲۹</div>
+    <div class="grow color-neg">(<b>+۳۵,۹۳۹</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۴,۶۸۱</div>
-    <div class="grow color-neg">(<b>+۱,۱۸۶</b>)</div>
+    <div class="num">۵,۱۴۴</div>
+    <div class="grow color-neg">(<b>+۱,۱۹۹</b>)</div>
   </div></span>
     </div>
   </div>
@@ -95,13 +95,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">تعداد مبتلایان</div>
-    <div class="num">۶۰,۵۰۰</div>
-    <div class="grow color-neg">(<b>+۱۲,۹۰۷</b>)</div>
+    <div class="num">۶۴,۵۸۶</div>
+    <div class="grow color-neg">(<b>+۱۱,۴۰۳</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۳,۷۳۹</div>
-    <div class="grow color-neg">(<b>+۷۰۳</b>)</div>
+    <div class="num">۳,۹۹۳</div>
+    <div class="grow color-neg">(<b>+۶۹۹</b>)</div>
   </div></span>
     </div>
   </div>
@@ -120,103 +120,103 @@ layout: notebook
        <td></td>
        <td></td>
        <td></td>
-       <td class="text-left change" style="font-size: 9px;">از (+جدبد) ۱۳ / ۰۱ / ۱۳۹۹</td>
+       <td class="text-left change" style="font-size: 9px;">از (+جدبد) ۱۵ / ۰۱ / ۱۳۹۹</td>
      </tr>
    
      <tr>
        <td class="mw"><b>ایران</b></td>
-       <td class="pl1">۶۰,۵۰۰<span class="change neg">(<b>+۱۲,۹۰۷</b>)</span></td>
-       <td class="pl1">۳,۷۳۹<span class="change neg">(<b>+۷۰۳</b>)</span></td>
+       <td class="pl1">۶۴,۵۸۶<span class="change neg">(<b>+۱۱,۴۰۳</b>)</span></td>
+       <td class="pl1">۳,۹۹۳<span class="change neg">(<b>+۶۹۹</b>)</span></td>
        <td class="pl1">6.2%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>ترکیه</b></td>
-       <td class="pl1">۳۰,۲۱۷<span class="change neg">(<b>+۱۴,۵۳۸</b>)</span></td>
-       <td class="pl1">۶۴۹<span class="change neg">(<b>+۳۷۲</b>)</span></td>
+       <td class="pl1">۳۸,۲۲۶<span class="change neg">(<b>+۱۷,۳۰۵</b>)</span></td>
+       <td class="pl1">۸۱۲<span class="change neg">(<b>+۳۸۷</b>)</span></td>
        <td class="pl1">2.1%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>اسراییل</b></td>
-       <td class="pl1">۸,۹۰۴<span class="change neg">(<b>+۲,۸۱۲</b>)</span></td>
-       <td class="pl1">۵۷<span class="change neg">(<b>+۳۱</b>)</span></td>
-       <td class="pl1">0.6%</td>
+       <td class="pl1">۹,۴۰۴<span class="change neg">(<b>+۱,۹۷۶</b>)</span></td>
+       <td class="pl1">۷۳<span class="change neg">(<b>+۳۳</b>)</span></td>
+       <td class="pl1">0.8%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>عربستان سعودی</b></td>
-       <td class="pl1">۲,۶۰۵<span class="change neg">(<b>+۸۸۵</b>)</span></td>
-       <td class="pl1">۳۸<span class="change neg">(<b>+۲۲</b>)</span></td>
-       <td class="pl1">1.5%</td>
+       <td class="pl1">۲,۹۳۲<span class="change neg">(<b>+۸۹۳</b>)</span></td>
+       <td class="pl1">۴۱<span class="change neg">(<b>+۱۶</b>)</span></td>
+       <td class="pl1">1.4%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>امارات متحده عربی</b></td>
-       <td class="pl1">۲,۰۷۶<span class="change neg">(<b>+۱,۲۶۲</b>)</span></td>
-       <td class="pl1">۱۱<span class="change neg">(<b>+۳</b>)</span></td>
+       <td class="pl1">۲,۶۵۹<span class="change neg">(<b>+۱,۳۹۵</b>)</span></td>
+       <td class="pl1">۱۲<span class="change neg">(<b>+۳</b>)</span></td>
        <td class="pl1">0.5%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>قطر</b></td>
-       <td class="pl1">۱,۸۳۲<span class="change neg">(<b>+۹۹۷</b>)</span></td>
-       <td class="pl1">۴<span class="change neg">(<b>+۲</b>)</span></td>
-       <td class="pl1">0.2%</td>
+       <td class="pl1">۲,۲۱۰<span class="change neg">(<b>+۱,۱۳۵</b>)</span></td>
+       <td class="pl1">۶<span class="change neg">(<b>+۳</b>)</span></td>
+       <td class="pl1">0.3%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>مصر</b></td>
-       <td class="pl1">۱,۳۲۲<span class="change neg">(<b>+۵۴۳</b>)</span></td>
-       <td class="pl1">۸۵<span class="change neg">(<b>+۳۳</b>)</span></td>
-       <td class="pl1">6.4%</td>
+       <td class="pl1">۱,۵۶۰<span class="change neg">(<b>+۵۷۵</b>)</span></td>
+       <td class="pl1">۱۰۳<span class="change neg">(<b>+۳۷</b>)</span></td>
+       <td class="pl1">6.6%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>عراق</b></td>
-       <td class="pl1">۱,۰۳۱<span class="change neg">(<b>+۳۰۳</b>)</span></td>
-       <td class="pl1">۶۴<span class="change neg">(<b>+۱۲</b>)</span></td>
-       <td class="pl1">6.2%</td>
-     </tr>
-   
-     <tr>
-       <td class="mw"><b>بحرین</b></td>
-       <td class="pl1">۷۵۶<span class="change neg">(<b>+۱۸۷</b>)</span></td>
-       <td class="pl1">۴<span class="change neg">(<b>+۰</b>)</span></td>
-       <td class="pl1">0.5%</td>
+       <td class="pl1">۱,۲۰۲<span class="change neg">(<b>+۳۸۲</b>)</span></td>
+       <td class="pl1">۶۹<span class="change neg">(<b>+۱۵</b>)</span></td>
+       <td class="pl1">5.7%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>کویت</b></td>
-       <td class="pl1">۶۶۵<span class="change neg">(<b>+۳۴۸</b>)</span></td>
+       <td class="pl1">۸۵۵<span class="change neg">(<b>+۴۳۸</b>)</span></td>
        <td class="pl1">۱<span class="change neg">(<b>+۱</b>)</span></td>
-       <td class="pl1">0.2%</td>
+       <td class="pl1">0.1%</td>
+     </tr>
+   
+     <tr>
+       <td class="mw"><b>بحرین</b></td>
+       <td class="pl1">۸۲۳<span class="change neg">(<b>+۱۵۱</b>)</span></td>
+       <td class="pl1">۵<span class="change neg">(<b>+۱</b>)</span></td>
+       <td class="pl1">0.6%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>لبنان</b></td>
-       <td class="pl1">۵۴۱<span class="change neg">(<b>+۶۲</b>)</span></td>
-       <td class="pl1">۱۹<span class="change neg">(<b>+۵</b>)</span></td>
-       <td class="pl1">3.5%</td>
+       <td class="pl1">۵۷۶<span class="change neg">(<b>+۶۸</b>)</span></td>
+       <td class="pl1">۱۹<span class="change neg">(<b>+۲</b>)</span></td>
+       <td class="pl1">3.3%</td>
+     </tr>
+   
+     <tr>
+       <td class="mw"><b>عمان</b></td>
+       <td class="pl1">۴۱۹<span class="change neg">(<b>+۱۶۷</b>)</span></td>
+       <td class="pl1">۲<span class="change neg">(<b>+۱</b>)</span></td>
+       <td class="pl1">0.5%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>اردن</b></td>
-       <td class="pl1">۳۴۹<span class="change neg">(<b>+۷۱</b>)</span></td>
+       <td class="pl1">۳۵۸<span class="change neg">(<b>+۴۸</b>)</span></td>
        <td class="pl1">۶<span class="change neg">(<b>+۱</b>)</span></td>
        <td class="pl1">1.7%</td>
      </tr>
    
      <tr>
-       <td class="mw"><b>عمان</b></td>
-       <td class="pl1">۳۳۱<span class="change neg">(<b>+۱۲۱</b>)</span></td>
-       <td class="pl1">۲<span class="change neg">(<b>+۱</b>)</span></td>
-       <td class="pl1">0.6%</td>
-     </tr>
-   
-     <tr>
        <td class="mw"><b>سوریه</b></td>
-       <td class="pl1">۱۹<span class="change neg">(<b>+۹</b>)</span></td>
+       <td class="pl1">۱۹<span class="change neg">(<b>+۳</b>)</span></td>
        <td class="pl1">۲<span class="change neg">(<b>+۰</b>)</span></td>
        <td class="pl1">10.5%</td>
      </tr>
