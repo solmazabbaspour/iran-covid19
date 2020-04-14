@@ -57,5 +57,5 @@ If you are interested please [contact me](https://twitter.com/s_abbaspour) and I
 
 | Member | Role|
 |--------| ---|
-|<img src="https://avatars2.githubusercontent.com/u/5240896?v=4" width="100px;" alt=""/> | Admin |
-|<img src="https://avatars2.githubusercontent.com/u/7594907?v=4" width="100px;" alt=""/> | Frontend developer|
+|<a href="http://www.solmazabbaspour.com/"><img src="https://avatars2.githubusercontent.com/u/5240896?v=4" width="100px;" alt="Solmaz Abbaspour"/></a> | Admin |
+|<a href="http://faratech.ca/"><img src="https://avatars2.githubusercontent.com/u/7594907?v=4" width="100px;" alt="Nilou Houshmand"/></a> | Frontend developer|
