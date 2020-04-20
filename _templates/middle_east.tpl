@@ -73,6 +73,126 @@
     </g>
 </svg>
 {%- endmacro %}
+
+ <script type="text/javascript">
+     $(function () {
+         $(".mapcontainer").mapael({
+             map: {
+                 name: "middle_east",
+                 defaultArea: {
+                     attrs: {
+                         stroke: "#fff",
+                         "stroke-width": 0.1
+
+                     }
+                 }
+             },
+             /* attrs will be applied to legend AND map elements whereas legendSpecificAttrs will onlybe applied to legend elements */
+             legend: {
+                 area: {
+                     title: "موارد کرونا در خاورمیانه",
+                     slices: [
+                         {
+                             max: 1000,
+                             attrs: {
+                                 fill: "#d5e5ff"
+                             },
+                             legendSpecificAttrs: {
+                                 stroke: '#505050',
+                                 "stroke-width": 2,
+                                 width: 50,
+                                 height: 50
+                             },
+                             label: "کمتر از ۱۰۰۰ مورد تایید شده"
+                         },
+                         {
+                             min: 1000,
+                             max: 10000,
+                             attrs: {
+                                 fill: "#87aade"
+                             },
+                             legendSpecificAttrs: {
+                                 stroke: '#505050',
+                                 "stroke-width": 2,
+                                 width: 50,
+                                 height: 50
+                             },
+                             label: "بین ۱۰۰۰ تا ۱۰۰۰۰ مورد تایید شده"
+                         },
+                         {
+                             min: 10000,
+                             max: 50000,
+                             attrs: {
+                                 fill: "#3777c8"
+                             },
+                             legendSpecificAttrs: {
+                                 stroke: '#505050',
+                                 "stroke-width": 2,
+                                 width: 50,
+                                 height: 50
+                             },
+                             label: "بین ۱۰۰۰۰ تا ۵۰۰۰۰ مورد تایید شده"
+                         },
+                         {
+                             min: 50000,
+                             attrs: {
+                                 fill: "#214478"
+                             },
+                             legendSpecificAttrs: {
+                                 stroke: '#505050',
+                                 "stroke-width": 2,
+                                 width: 50,
+                                 height: 50
+                             },
+                             label: "بیشر از ۵۰۰۰۰ مورد تایید شده"
+                         }
+                     ]
+                 }
+             },
+
+             areas: {
+                {% for index, row in table.iterrows() %}
+                  {% if row[COL_REGION] != 'ایران' %}
+                   "{{row[COL_REGION]}}": {
+                       "value": "{{ row['Cases'] }}",
+                       "attrs": {
+                           "href": "#"
+                       },
+                       "tooltip": {
+                           "content": "<span style=\"font-weight:bold;\">{{row[COL_REGION]}}<\/span><br \/> تعداد موارد : {{ digits.en_to_fa('{0:,.0f}'.format(row['Cases'])) }} <br \/> مرگ : {{ digits.en_to_fa('{0:,.0f}'.format(row['Deaths'])) }}"
+                       }
+                   },
+                   {% endif %}
+                 {% endfor %}
+                 "ایران": {
+                     "value": "{{ D['Iran Cases'] }}",
+                     "attrs": {
+                         "href": "#"
+                     },
+                     "tooltip": {
+                         "content": "<span style=\"font-weight:bold;\">ایران<\/span><br \/> تعداد موارد : {{ digits.en_to_fa('{0:,.0f}'.format(D['Iran Cases'])) }} <br \/> مرگ : {{ digits.en_to_fa('{0:,.0f}'.format(D['Iran Deaths'])) }}"
+                     }
+                 }
+
+             }
+         });
+     });
+ </script>
+ <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b></p>
+ <div class="row mapcontainer">
+   <div class="column right">
+     <div class="map">
+         <span>Alternative content for the map</span>
+     </div>
+   </div>
+   <div class="column left">
+     <div class="areaLegend">
+         <span>موارد کرونا در خاورمیانه</span>
+     </div>
+
+   </div>
+
+ </div>
 <div class="overview">
     <!-- {{ toplinks() }} -->
   <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>{{ jdate_updated }}</b> ( +تغییرات نسبت به {{ lastdays }} روز پیش)</p>

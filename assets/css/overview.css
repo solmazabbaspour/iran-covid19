@@ -5,6 +5,9 @@
   justify-content: center;
   font-family: 'Vazir', sans-serif;
 }
+text {
+  font-family: 'Vazir', sans-serif !important;
+}
 .item {
   width: 48%;
   height: 48%;

@@ -1,0 +1,57 @@
+
+* {
+   box-sizing: border-box;
+ }
+ .left {
+   float:left;
+   width: 25%;
+   padding:20px;
+ }
+
+ .right {
+   float:left;
+   width: 75%;
+ }
+
+
+ .mapcontainer .areaLegend {
+   direction: ltr;
+ }
+
+.row {
+    max-width: 900px;
+    margin:10px auto;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+ .left, .right {
+   width: 100%;
+  }
+ }
+/* Specific mapael css class are below
+ * 'mapael' class is added by plugin
+*/
+
+.mapael .map {
+    position: relative;
+}
+
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: #fff;
+    moz-opacity: 0.80;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #343434;
+}

@@ -68,11 +68,11 @@ layout: notebook
   <!-- <div class="text-center toplinksgithub">
   <a href="../covid-overview/">کل دنیا</a><a href="../covid-middle-east-overview/">خاورمیانه</a>
 </div> -->
-  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۲۰ / ۰۱ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
+  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۳۱ / ۰۱ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
   <p class="text-center narrative">
-  در <b>۵ روز گذشته</b>, <b class="color-neg">۴۱۵,۱۲۹</b> مورد جدید کرونا در دنیا گزارش شده است.
-  از این تعداد <b class="color-neg">۱۸۴,۹۷۹</b> (۴۵%) مورد مربوط به  <b>اروپا</b> بوده است.
-  <b> در ایران </b> تعداد <b class="color-neg">۱۱,۴۰۳</b> مورد جدید در ۵ روز گذشته گزارش شده است.
+  در <b>۵ روز گذشته</b>, <b class="color-neg">۴۲۵,۰۶۴</b> مورد جدید کرونا در دنیا گزارش شده است.
+  از این تعداد <b class="color-neg">۱۶۶,۹۶۱</b> (۳۹%) مورد مربوط به  <b>اروپا</b> بوده است.
+  <b> در ایران </b> تعداد <b class="color-neg">۷,۳۳۴</b> مورد جدید در ۵ روز گذشته گزارش شده است.
 </p>
 
   <div class="item">
@@ -80,13 +80,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">کل موارد</div>
-    <div class="num">۱,۵۱۰,۹۲۰</div>
-    <div class="grow color-neg">(<b>+۴۱۵,۱۲۹</b>)</div>
+    <div class="num">۲,۴۰۰,۸۶۸</div>
+    <div class="grow color-neg">(<b>+۴۲۵,۰۶۴</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۸۸,۳۳۳</div>
-    <div class="grow color-neg">(<b>+۲۹,۵۴۹</b>)</div>
+    <div class="num">۱۶۵,۰۳۱</div>
+    <div class="grow color-neg">(<b>+۳۹,۰۵۶</b>)</div>
   </div></span>
     </div>
   </div>
@@ -95,13 +95,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">کل موارد</div>
-    <div class="num">۶۴,۵۸۶</div>
-    <div class="grow color-neg">(<b>+۱۱,۴۰۳</b>)</div>
+    <div class="num">۸۲,۲۱۱</div>
+    <div class="grow color-neg">(<b>+۷,۳۳۴</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۳,۹۹۳</div>
-    <div class="grow color-neg">(<b>+۶۹۹</b>)</div>
+    <div class="num">۵,۱۱۸</div>
+    <div class="grow color-neg">(<b>+۴۳۵</b>)</div>
   </div></span>
     </div>
   </div>
@@ -112,13 +112,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">کل موارد</div>
-    <div class="num">۸۲,۸۰۹</div>
-    <div class="grow color-neg">(<b>+۲۹۸</b>)</div>
+    <div class="num">۸۳,۸۰۵</div>
+    <div class="grow color-neg">(<b>+۴۹۹</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۳,۳۳۷</div>
-    <div class="grow color-neg">(<b>+۱۱</b>)</div>
+    <div class="num">۴,۶۳۶</div>
+    <div class="grow color-neg">(<b>+۱,۲۹۱</b>)</div>
   </div> </span>
 
     </div>
@@ -129,13 +129,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">کل موارد</div>
-    <div class="num">۷۴۵,۹۴۸</div>
-    <div class="grow color-neg">(<b>+۱۸۴,۹۷۹</b>)</div>
+    <div class="num">۱,۰۸۹,۹۷۴</div>
+    <div class="grow color-neg">(<b>+۱۶۶,۹۶۱</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۶۱,۲۹۴</div>
-    <div class="grow color-neg">(<b>+۱۹,۰۲۴</b>)</div>
+    <div class="num">۱۰۱,۸۲۲</div>
+    <div class="grow color-neg">(<b>+۱۸,۴۷۳</b>)</div>
   </div> </span>
 
     </div>
@@ -146,13 +146,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">کل موارد</div>
-    <div class="num">۴۲۹,۰۵۲</div>
-    <div class="grow color-neg">(<b>+۱۵۳,۴۶۶</b>)</div>
+    <div class="num">۷۵۹,۰۸۶</div>
+    <div class="grow color-neg">(<b>+۱۵۱,۴۱۶</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۱۴,۶۹۵</div>
-    <div class="grow color-neg">(<b>+۷,۶۰۸</b>)</div>
+    <div class="num">۴۰,۶۶۱</div>
+    <div class="grow color-neg">(<b>+۱۴,۸۳۰</b>)</div>
   </div> </span>
 
     </div>

@@ -1,0 +1,705 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "papermill": {
+     "duration": 0.009199,
+     "end_time": "2020-04-20T09:04:18.284689",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:18.275490",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#   نقشه کرونا در خاورمیانه\n",
+    "> مروری بر مبتلایان کرونا ، مرگ و میر و موارد جدید براساس کشور در خاورمیانه.\n",
+    "\n",
+    "- comments: true\n",
+    "- author:  نیلوفر هوشمند، سولماز عباسپور\n",
+    "- categories: [ خاورمیانه, مرور]\n",
+    "- image: images/covid-middle-east.png\n",
+    "- permalink: /covid-middle-east-overview-map/\n",
+    "- hide: false"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:30.187291Z",
+     "iopub.status.busy": "2020-04-19T18:03:30.186672Z",
+     "iopub.status.idle": "2020-04-19T18:03:30.190214Z",
+     "shell.execute_reply": "2020-04-19T18:03:30.190711Z"
+    },
+    "papermill": {
+     "duration": 0.0184,
+     "end_time": "2020-04-20T09:04:18.310668",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:18.292268",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Example of using jupyter notebook, pandas (data transformations), jinja2 (html, visual)\n",
+      "to create visual dashboards with fastpages\n",
+      "You see also the live version on https://gramener.com/enumter/covid19/\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "#hide\n",
+    "print('''\n",
+    "Example of using jupyter notebook, pandas (data transformations), jinja2 (html, visual)\n",
+    "to create visual dashboards with fastpages\n",
+    "You see also the live version on https://gramener.com/enumter/covid19/\n",
+    "''')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:30.211385Z",
+     "iopub.status.busy": "2020-04-19T18:03:30.210784Z",
+     "iopub.status.idle": "2020-04-19T18:03:32.978449Z",
+     "shell.execute_reply": "2020-04-19T18:03:32.979022Z"
+    },
+    "papermill": {
+     "duration": 1.903238,
+     "end_time": "2020-04-20T09:04:20.222786",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:18.319548",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\u001b[33mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support\u001b[0m\r\n",
+      "Defaulting to user installation because normal site-packages is not writeable\r\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: jdatetime in /Users/solmazabbaspour/Library/Python/2.7/lib/python/site-packages (3.6.2)\r\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\u001b[33mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support\u001b[0m\r\n",
+      "Defaulting to user installation because normal site-packages is not writeable\r\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: persiantools in /Users/solmazabbaspour/Library/Python/2.7/lib/python/site-packages (1.4.1)\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "#hide\n",
+    "!pip install jdatetime\n",
+    "!pip install persiantools\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "from jinja2 import Template\n",
+    "import jdatetime as jd\n",
+    "import os\n",
+    "from persiantools import digits\n",
+    "from IPython.display import HTML"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:33.563462Z",
+     "iopub.status.busy": "2020-04-19T18:03:33.558557Z",
+     "iopub.status.idle": "2020-04-19T18:03:33.819626Z",
+     "shell.execute_reply": "2020-04-19T18:03:33.819032Z"
+    },
+    "papermill": {
+     "duration": 0.315774,
+     "end_time": "2020-04-20T09:04:20.548038",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:20.232264",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "#hide\n",
+    "\n",
+    "# FETCH\n",
+    "dirpath = os.path.dirname(os.getcwd())\n",
+    "base_url = 'https://raw.githubusercontent.com/solmazabbaspour/iran-covid19/master/_notebooks/'\n",
+    "paths = {\n",
+    "    'mapping': base_url + 'middle_east.csv' ,\n",
+    "    'overview': dirpath + '/_templates/middle_east_map.tpl'\n",
+    "}\n",
+    "\n",
+    "def get_mappings(url):\n",
+    "    df = pd.read_csv(url)\n",
+    "    return {\n",
+    "        'df': df,\n",
+    "        'replace.country': dict(df.dropna(subset=['Name']).set_index('Country')['Name'])\n",
+    "    }\n",
+    "\n",
+    "mapping = get_mappings(paths['mapping'])\n",
+    "\n",
+    "def get_template(path):\n",
+    "    from urllib.parse import urlparse\n",
+    "    if bool(urlparse(path).netloc):\n",
+    "        from urllib.request import urlopen\n",
+    "        return urlopen(path).read().decode('utf8')\n",
+    "    return open(path).read()\n",
+    "\n",
+    "def get_frame(name):\n",
+    "    url = (\n",
+    "        'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/'\n",
+    "        f'csse_covid_19_time_series/time_series_covid19_{name}_global.csv')\n",
+    "    df = pd.read_csv(url)\n",
+    "    # rename countries\n",
+    "    df = df[df['Country/Region'].isin(mapping['replace.country'])]   # Just use list above\n",
+    "    df['Country/Region'] = df['Country/Region'].replace(mapping['replace.country'])\n",
+    "    return df\n",
+    "\n",
+    "def get_dates(df):\n",
+    "    dt_cols = df.columns[~df.columns.isin(['Province/State', 'Country/Region', 'Lat', 'Long'])]\n",
+    "    LAST_DATE_I = -1\n",
+    "    # sometimes last column may be empty, then go backwards\n",
+    "    for i in range(-1, -len(dt_cols), -1):\n",
+    "        if not df[dt_cols[i]].fillna(0).eq(0).all():\n",
+    "            LAST_DATE_I = i\n",
+    "            break\n",
+    "    return LAST_DATE_I, dt_cols"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:33.841584Z",
+     "iopub.status.busy": "2020-04-19T18:03:33.840977Z",
+     "iopub.status.idle": "2020-04-19T18:03:34.007185Z",
+     "shell.execute_reply": "2020-04-19T18:03:34.007760Z"
+    },
+    "papermill": {
+     "duration": 0.355597,
+     "end_time": "2020-04-20T09:04:20.913213",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:20.557616",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "#hide\n",
+    "COL_REGION = 'Country/Region'\n",
+    "# Confirmed, Recovered, Deaths\n",
+    "df = get_frame('confirmed')\n",
+    "# dft_: timeseries, dfc_: today country agg\n",
+    "dft_cases = df\n",
+    "dft_deaths = get_frame('deaths')\n",
+    "dft_recovered = get_frame('recovered')\n",
+    "LAST_DATE_I, dt_cols = get_dates(df)\n",
+    "\n",
+    "dt_today = dt_cols[LAST_DATE_I]\n",
+    "dt_5ago = dt_cols[LAST_DATE_I-5]\n",
+    "\n",
+    "\n",
+    "dfc_cases = dft_cases.groupby(COL_REGION)[dt_today].sum()\n",
+    "dfc_deaths = dft_deaths.groupby(COL_REGION)[dt_today].sum()\n",
+    "dfp_cases = dft_cases.groupby(COL_REGION)[dt_5ago].sum()\n",
+    "dfp_deaths = dft_deaths.groupby(COL_REGION)[dt_5ago].sum()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:34.044499Z",
+     "iopub.status.busy": "2020-04-19T18:03:34.043849Z",
+     "iopub.status.idle": "2020-04-19T18:03:34.063609Z",
+     "shell.execute_reply": "2020-04-19T18:03:34.064098Z"
+    },
+    "papermill": {
+     "duration": 0.037466,
+     "end_time": "2020-04-20T09:04:20.959077",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:20.921611",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "#hide\n",
+    "df_table = (pd.DataFrame(dict(Cases=dfc_cases, Deaths=dfc_deaths, PCases=dfp_cases, PDeaths=dfp_deaths))\n",
+    "             .sort_values(by=['Cases', 'Deaths'], ascending=[False, False])\n",
+    "             .reset_index())\n",
+    "df_table.rename(columns={'index': 'Country/Region'}, inplace=True)\n",
+    "for c in 'Cases, Deaths'.split(', '):\n",
+    "    df_table[f'{c} (+)'] = (df_table[c] - df_table[f'P{c}']).clip(0)  # DATA BUG\n",
+    "    df_table['Fatality Rate'] = (100 * df_table['Deaths'] / df_table['Cases']).round(1)\n",
+    "    df_table.head(15)\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Iran': 'ایران'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Turkey': 'ترکیه'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Israel': 'اسراییل'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Saudi Arabia': 'عربستان سعودی'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'United Arab Emirates': 'امارات متحده عربی'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Qatar': 'قطر'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Egypt': 'مصر'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Iraq': 'عراق'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Bahrain': 'بحرین'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Lebanon': 'لبنان'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Kuwait': 'کویت'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Jordan': 'اردن'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Oman': 'عمان'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Syria': 'سوریه'})\n",
+    "df_table['Country/Region'] = df_table['Country/Region'].replace({'Yemen': 'یمن'})"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:34.104370Z",
+     "iopub.status.busy": "2020-04-19T18:03:34.086280Z",
+     "iopub.status.idle": "2020-04-19T18:03:34.107863Z",
+     "shell.execute_reply": "2020-04-19T18:03:34.108333Z"
+    },
+    "papermill": {
+     "duration": 0.030613,
+     "end_time": "2020-04-20T09:04:20.996851",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:20.966238",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'updated': Timestamp('2020-04-19 00:00:00'),\n",
+       " 'since': Timestamp('2020-04-14 00:00:00'),\n",
+       " 'Cases': 214474,\n",
+       " 'Deaths': 7826,\n",
+       " 'Cases (+)': 40196,\n",
+       " 'Deaths (+)': 1209,\n",
+       " 'Iran Cases': 82211,\n",
+       " 'Iran Deaths': 5118,\n",
+       " 'Iran Cases (+)': 7334,\n",
+       " 'Iran Deaths (+)': 435,\n",
+       " 'Turkey Cases': 86306,\n",
+       " 'Turkey Deaths': 2017,\n",
+       " 'Turkey Cases (+)': 21195,\n",
+       " 'Turkey Deaths (+)': 614}"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#hide\n",
+    "# Iran Middle east\n",
+    "metrics = ['Cases', 'Deaths', 'Cases (+)', 'Deaths (+)']\n",
+    "s_iran = df_table[df_table['Country/Region'].eq('ایران')][metrics].sum().add_prefix('Iran ')\n",
+    "s_tu = df_table[df_table['Country/Region'].eq('ترکیه')][metrics].sum().add_prefix('Turkey ')\n",
+    "summary = {'updated': pd.to_datetime(dt_today), 'since': pd.to_datetime(dt_5ago)}\n",
+    "summary = {**summary, **df_table[metrics].sum(), **s_iran, **s_tu}\n",
+    "summary"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:34.145284Z",
+     "iopub.status.busy": "2020-04-19T18:03:34.144624Z",
+     "iopub.status.idle": "2020-04-19T18:03:34.154737Z",
+     "shell.execute_reply": "2020-04-19T18:03:34.155226Z"
+    },
+    "papermill": {
+     "duration": 0.03315,
+     "end_time": "2020-04-20T09:04:21.037656",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:21.004506",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>1/22/20</th>\n",
+       "      <th>1/23/20</th>\n",
+       "      <th>1/24/20</th>\n",
+       "      <th>1/25/20</th>\n",
+       "      <th>1/26/20</th>\n",
+       "      <th>1/27/20</th>\n",
+       "      <th>1/28/20</th>\n",
+       "      <th>1/29/20</th>\n",
+       "      <th>1/30/20</th>\n",
+       "      <th>1/31/20</th>\n",
+       "      <th>...</th>\n",
+       "      <th>4/10/20</th>\n",
+       "      <th>4/11/20</th>\n",
+       "      <th>4/12/20</th>\n",
+       "      <th>4/13/20</th>\n",
+       "      <th>4/14/20</th>\n",
+       "      <th>4/15/20</th>\n",
+       "      <th>4/16/20</th>\n",
+       "      <th>4/17/20</th>\n",
+       "      <th>4/18/20</th>\n",
+       "      <th>4/19/20</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Country/Region</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>Bahrain</th>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>38</td>\n",
+       "      <td>115</td>\n",
+       "      <td>96</td>\n",
+       "      <td>225</td>\n",
+       "      <td>167</td>\n",
+       "      <td>143</td>\n",
+       "      <td>29</td>\n",
+       "      <td>40</td>\n",
+       "      <td>33</td>\n",
+       "      <td>108</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Egypt</th>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>95</td>\n",
+       "      <td>145</td>\n",
+       "      <td>126</td>\n",
+       "      <td>125</td>\n",
+       "      <td>160</td>\n",
+       "      <td>155</td>\n",
+       "      <td>168</td>\n",
+       "      <td>171</td>\n",
+       "      <td>188</td>\n",
+       "      <td>112</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Iran</th>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>1972</td>\n",
+       "      <td>1837</td>\n",
+       "      <td>1657</td>\n",
+       "      <td>1617</td>\n",
+       "      <td>1574</td>\n",
+       "      <td>1512</td>\n",
+       "      <td>1606</td>\n",
+       "      <td>1499</td>\n",
+       "      <td>1374</td>\n",
+       "      <td>1343</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Iraq</th>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>47</td>\n",
+       "      <td>39</td>\n",
+       "      <td>34</td>\n",
+       "      <td>26</td>\n",
+       "      <td>22</td>\n",
+       "      <td>15</td>\n",
+       "      <td>19</td>\n",
+       "      <td>48</td>\n",
+       "      <td>31</td>\n",
+       "      <td>26</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Israel</th>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>440</td>\n",
+       "      <td>335</td>\n",
+       "      <td>402</td>\n",
+       "      <td>441</td>\n",
+       "      <td>460</td>\n",
+       "      <td>455</td>\n",
+       "      <td>257</td>\n",
+       "      <td>224</td>\n",
+       "      <td>283</td>\n",
+       "      <td>226</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>5 rows × 89 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                1/22/20  1/23/20  1/24/20  1/25/20  1/26/20  1/27/20  1/28/20  \\\n",
+       "Country/Region                                                                  \n",
+       "Bahrain               0        0        0        0        0        0        0   \n",
+       "Egypt                 0        0        0        0        0        0        0   \n",
+       "Iran                  0        0        0        0        0        0        0   \n",
+       "Iraq                  0        0        0        0        0        0        0   \n",
+       "Israel                0        0        0        0        0        0        0   \n",
+       "\n",
+       "                1/29/20  1/30/20  1/31/20  ...  4/10/20  4/11/20  4/12/20  \\\n",
+       "Country/Region                             ...                              \n",
+       "Bahrain               0        0        0  ...       38      115       96   \n",
+       "Egypt                 0        0        0  ...       95      145      126   \n",
+       "Iran                  0        0        0  ...     1972     1837     1657   \n",
+       "Iraq                  0        0        0  ...       47       39       34   \n",
+       "Israel                0        0        0  ...      440      335      402   \n",
+       "\n",
+       "                4/13/20  4/14/20  4/15/20  4/16/20  4/17/20  4/18/20  4/19/20  \n",
+       "Country/Region                                                                 \n",
+       "Bahrain             225      167      143       29       40       33      108  \n",
+       "Egypt               125      160      155      168      171      188      112  \n",
+       "Iran               1617     1574     1512     1606     1499     1374     1343  \n",
+       "Iraq                 26       22       15       19       48       31       26  \n",
+       "Israel              441      460      455      257      224      283      226  \n",
+       "\n",
+       "[5 rows x 89 columns]"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#hide\n",
+    "dft_ct_cases = dft_cases.groupby(COL_REGION)[dt_cols].sum()\n",
+    "dft_ct_new_cases = dft_ct_cases.diff(axis=1).fillna(0).astype(int)\n",
+    "dft_ct_new_cases.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2020-04-19T18:03:34.181695Z",
+     "iopub.status.busy": "2020-04-19T18:03:34.181084Z",
+     "iopub.status.idle": "2020-04-19T18:03:34.243195Z",
+     "shell.execute_reply": "2020-04-19T18:03:34.243757Z"
+    },
+    "papermill": {
+     "duration": 0.026979,
+     "end_time": "2020-04-20T09:04:21.072919",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:21.045940",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "\n",
+       "\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#hide_input\n",
+    "template = Template(get_template(paths['overview']))\n",
+    "days = digits.en_to_fa(str((summary['updated'] - summary['since']).days))\n",
+    "g_date_updated = pd.to_datetime(summary['updated'])\n",
+    "jdate_updated = jd.date.fromgregorian(year=g_date_updated.year,month=g_date_updated.month,day=g_date_updated.day,locale='fa_IR').strftime(\"%d / %m / %Y\")\n",
+    "jdate_updated = digits.en_to_fa(jdate_updated)\n",
+    "g_date_since = pd.to_datetime(summary['since'])\n",
+    "jdate_since = jd.date.fromgregorian(year=g_date_since.year,month=g_date_since.month,day=g_date_since.day,locale='fa_IR').strftime(\"%d / %m / %Y\")\n",
+    "jdate_since = digits.en_to_fa(jdate_since)\n",
+    "html = template.render(\n",
+    "   D=summary, table=df_table,  # REMOVE .head(20) to see all values\n",
+    "   newcases=dft_ct_new_cases.loc[:, dt_cols[LAST_DATE_I-50]:dt_cols[LAST_DATE_I]],\n",
+    "   np=np, pd=pd, days=days, digits=digits, \n",
+    "   jdate_updated=jdate_updated, jdate_since=jdate_since)\n",
+    "\n",
+    "HTML(f'<div>{html}</div>')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "papermill": {
+     "duration": 0.008713,
+     "end_time": "2020-04-20T09:04:21.090407",
+     "exception": false,
+     "start_time": "2020-04-20T09:04:21.081694",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "\n",
+    "طراحی از  [نیلوفر هوشمند](https://github.com/nilouhou//)[^۱]\n",
+    "\n",
+    "[^۱]: منبع: [\"2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE\"](https://systems.jhu.edu/research/public-health/ncov/) [GitHub repository](https://github.com/CSSEGISandData/COVID-19). لینک به صفحه [اصلی](https://github.com/pratapvardhan/notebooks/blob/master/covid19/covid19-compare-country-trajectories.ipynb)."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.7"
+  },
+  "papermill": {
+   "duration": 3.788988,
+   "end_time": "2020-04-20T09:04:21.103374",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "2020-04-19-covid19-overview-middle-east-map.ipynb",
+   "output_path": "2020-04-19-covid19-overview-middle-east-map.ipynb",
+   "parameters": {},
+   "start_time": "2020-04-20T09:04:17.314386",
+   "version": "2.0.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
