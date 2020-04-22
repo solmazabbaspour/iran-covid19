@@ -3,7 +3,7 @@ keywords: fastai
 description: مروری بر مبتلایان کرونا ، مرگ و میر و موارد جدید براساس کشور در خاورمیانه.
 title: کرونا در خاورمیانه
 comments: true
-author: نیلوفر هوشمند، سولماز عباسپور
+author: سولماز عباسپور
 categories: [ خاورمیانه, مرور]
 image: images/covid-middle-east.png
 permalink: /covid-middle-east-overview/
@@ -145,12 +145,12 @@ layout: notebook
                 
                   
                    "ترکیه": {
-                       "value": "86306",
+                       "value": "95591",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">ترکیه<\/span><br \/> تعداد موارد : ۸۶,۳۰۶ <br \/> مرگ : ۲,۰۱۷"
+                           "content": "<span style=\"font-weight:bold;\">ترکیه<\/span><br \/> تعداد موارد : ۹۵,۵۹۱ <br \/> مرگ : ۲,۲۵۹"
                        }
                    },
                    
@@ -159,167 +159,167 @@ layout: notebook
                  
                   
                    "اسراییل": {
-                       "value": "13491",
+                       "value": "13942",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">اسراییل<\/span><br \/> تعداد موارد : ۱۳,۴۹۱ <br \/> مرگ : ۱۷۲"
+                           "content": "<span style=\"font-weight:bold;\">اسراییل<\/span><br \/> تعداد موارد : ۱۳,۹۴۲ <br \/> مرگ : ۱۸۴"
                        }
                    },
                    
                  
                   
                    "عربستان سعودی": {
-                       "value": "9362",
+                       "value": "11631",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">عربستان سعودی<\/span><br \/> تعداد موارد : ۹,۳۶۲ <br \/> مرگ : ۹۷"
+                           "content": "<span style=\"font-weight:bold;\">عربستان سعودی<\/span><br \/> تعداد موارد : ۱۱,۶۳۱ <br \/> مرگ : ۱۰۹"
                        }
                    },
                    
                  
                   
                    "امارات متحده عربی": {
-                       "value": "6781",
+                       "value": "7755",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">امارات متحده عربی<\/span><br \/> تعداد موارد : ۶,۷۸۱ <br \/> مرگ : ۴۱"
+                           "content": "<span style=\"font-weight:bold;\">امارات متحده عربی<\/span><br \/> تعداد موارد : ۷,۷۵۵ <br \/> مرگ : ۴۶"
                        }
                    },
                    
                  
                   
                    "قطر": {
-                       "value": "5448",
+                       "value": "6533",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">قطر<\/span><br \/> تعداد موارد : ۵,۴۴۸ <br \/> مرگ : ۸"
+                           "content": "<span style=\"font-weight:bold;\">قطر<\/span><br \/> تعداد موارد : ۶,۵۳۳ <br \/> مرگ : ۹"
                        }
                    },
                    
                  
                   
                    "مصر": {
-                       "value": "3144",
+                       "value": "3490",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">مصر<\/span><br \/> تعداد موارد : ۳,۱۴۴ <br \/> مرگ : ۲۳۹"
+                           "content": "<span style=\"font-weight:bold;\">مصر<\/span><br \/> تعداد موارد : ۳,۴۹۰ <br \/> مرگ : ۲۶۴"
                        }
                    },
                    
                  
                   
                    "کویت": {
-                       "value": "1915",
+                       "value": "2080",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">کویت<\/span><br \/> تعداد موارد : ۱,۹۱۵ <br \/> مرگ : ۷"
+                           "content": "<span style=\"font-weight:bold;\">کویت<\/span><br \/> تعداد موارد : ۲,۰۸۰ <br \/> مرگ : ۱۱"
                        }
                    },
                    
                  
                   
                    "بحرین": {
-                       "value": "1881",
+                       "value": "1973",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">بحرین<\/span><br \/> تعداد موارد : ۱,۸۸۱ <br \/> مرگ : ۷"
+                           "content": "<span style=\"font-weight:bold;\">بحرین<\/span><br \/> تعداد موارد : ۱,۹۷۳ <br \/> مرگ : ۷"
                        }
                    },
                    
                  
                   
                    "عراق": {
-                       "value": "1539",
+                       "value": "1602",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">عراق<\/span><br \/> تعداد موارد : ۱,۵۳۹ <br \/> مرگ : ۸۲"
+                           "content": "<span style=\"font-weight:bold;\">عراق<\/span><br \/> تعداد موارد : ۱,۶۰۲ <br \/> مرگ : ۸۳"
                        }
                    },
                    
                  
                   
                    "عمان": {
-                       "value": "1266",
+                       "value": "1508",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">عمان<\/span><br \/> تعداد موارد : ۱,۲۶۶ <br \/> مرگ : ۷"
+                           "content": "<span style=\"font-weight:bold;\">عمان<\/span><br \/> تعداد موارد : ۱,۵۰۸ <br \/> مرگ : ۸"
                        }
                    },
                    
                  
                   
                    "لبنان": {
-                       "value": "673",
+                       "value": "677",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">لبنان<\/span><br \/> تعداد موارد : ۶۷۳ <br \/> مرگ : ۲۱"
+                           "content": "<span style=\"font-weight:bold;\">لبنان<\/span><br \/> تعداد موارد : ۶۷۷ <br \/> مرگ : ۲۱"
                        }
                    },
                    
                  
                   
                    "اردن": {
-                       "value": "417",
+                       "value": "428",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">اردن<\/span><br \/> تعداد موارد : ۴۱۷ <br \/> مرگ : ۷"
+                           "content": "<span style=\"font-weight:bold;\">اردن<\/span><br \/> تعداد موارد : ۴۲۸ <br \/> مرگ : ۷"
                        }
                    },
                    
                  
                   
                    "سوریه": {
-                       "value": "39",
+                       "value": "42",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">سوریه<\/span><br \/> تعداد موارد : ۳۹ <br \/> مرگ : ۳"
+                           "content": "<span style=\"font-weight:bold;\">سوریه<\/span><br \/> تعداد موارد : ۴۲ <br \/> مرگ : ۳"
                        }
                    },
                    
                  
                   
-                   "یمن": {
+                   "Yemen": {
                        "value": "1",
                        "attrs": {
                            "href": "#"
                        },
                        "tooltip": {
-                           "content": "<span style=\"font-weight:bold;\">یمن<\/span><br \/> تعداد موارد : ۱ <br \/> مرگ : ۰"
+                           "content": "<span style=\"font-weight:bold;\">Yemen<\/span><br \/> تعداد موارد : ۱ <br \/> مرگ : ۰"
                        }
                    },
                    
                  
                  "ایران": {
-                     "value": "82211",
+                     "value": "84802",
                      "attrs": {
                          "href": "#"
                      },
                      "tooltip": {
-                         "content": "<span style=\"font-weight:bold;\">ایران<\/span><br \/> تعداد موارد : ۸۲,۲۱۱ <br \/> مرگ : ۵,۱۱۸"
+                         "content": "<span style=\"font-weight:bold;\">ایران<\/span><br \/> تعداد موارد : ۸۴,۸۰۲ <br \/> مرگ : ۵,۲۹۷"
                      }
                  }
 
@@ -327,7 +327,7 @@ layout: notebook
          });
      });
  </script>
- <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۳۱ / ۰۱ / ۱۳۹۹</b></p>
+ <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۰۲ / ۰۲ / ۱۳۹۹</b></p>
  <div class="row mapcontainer">
    <div class="column right">
      <div class="map">
@@ -346,11 +346,11 @@ layout: notebook
     <!-- <div class="text-center toplinksgithub">
   <a href="../covid-overview/">کل دنیا</a><a href="../covid-middle-east-overview/">خاورمیانه</a>
 </div> -->
-  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۳۱ / ۰۱ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
+  <p class="text-right text-uppercase fs9">بروزرسانی شده در <b>۰۲ / ۰۲ / ۱۳۹۹</b> ( +تغییرات نسبت به ۵ روز پیش)</p>
     <p class="text-center narrative">
-در <b>۵ روز گذشته</b>, <b class="color-neg">۴۰,۱۹۶</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
-  <b> در ایران </b> تعداد <b class="color-neg">۷,۳۳۴</b> مورد جدید در ۵ روز گذشته گزارش شده است.
-  <b>در ترکیه </b> تعداد <b class="color-neg">۲۱,۱۹۵</b> مورد جدید در ۵ روز گذشته گزارش شده است.
+در <b>۵ روز گذشته</b>, <b class="color-neg">۴۱,۳۵۲</b> مورد جدید کرونا در خاورمیانه گزارش شده است.
+  <b> در ایران </b> تعداد <b class="color-neg">۶,۸۰۷</b> مورد جدید در ۵ روز گذشته گزارش شده است.
+  <b>در ترکیه </b> تعداد <b class="color-neg">۲۱,۳۹۸</b> مورد جدید در ۵ روز گذشته گزارش شده است.
 </p>
 
   <div class="item">
@@ -358,12 +358,12 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">تعداد مبتلایان</div>
-    <div class="num">۲۱۴,۴۷۴</div>
-    <div class="grow color-neg">(<b>+۴۰,۱۹۶</b>)</div>
+    <div class="num">۲۳۲,۰۵۵</div>
+    <div class="grow color-neg">(<b>+۴۱,۳۵۲</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۷,۸۲۶</div>
+    <div class="num">۸,۳۰۸</div>
     <div class="grow color-neg">(<b>+۱,۲۰۹</b>)</div>
   </div></span>
     </div>
@@ -373,13 +373,13 @@ layout: notebook
     <div class="d-flex kpi-box">
       <span class="cases"><div class="kpi">
     <div class=" kname">تعداد مبتلایان</div>
-    <div class="num">۸۲,۲۱۱</div>
-    <div class="grow color-neg">(<b>+۷,۳۳۴</b>)</div>
+    <div class="num">۸۴,۸۰۲</div>
+    <div class="grow color-neg">(<b>+۶,۸۰۷</b>)</div>
   </div></span>
       <span class="cases"><div class="kpi">
     <div class=" kname">مرگ</div>
-    <div class="num">۵,۱۱۸</div>
-    <div class="grow color-neg">(<b>+۴۳۵</b>)</div>
+    <div class="num">۵,۲۹۷</div>
+    <div class="grow color-neg">(<b>+۴۲۸</b>)</div>
   </div></span>
     </div>
   </div>
@@ -398,109 +398,109 @@ layout: notebook
        <td></td>
        <td></td>
        <td></td>
-       <td class="text-left change" style="font-size: 9px;">از (+جدبد) ۲۶ / ۰۱ / ۱۳۹۹</td>
+       <td class="text-left change" style="font-size: 9px;">از (+جدبد) ۲۸ / ۰۱ / ۱۳۹۹</td>
      </tr>
    
      <tr>
        <td class="mw"><b>ترکیه</b></td>
-       <td class="pl1">۸۶,۳۰۶<span class="change neg">(<b>+۲۱,۱۹۵</b>)</span></td>
-       <td class="pl1">۲,۰۱۷<span class="change neg">(<b>+۶۱۴</b>)</span></td>
-       <td class="pl1">2.3%</td>
+       <td class="pl1">۹۵,۵۹۱<span class="change neg">(<b>+۲۱,۳۹۸</b>)</span></td>
+       <td class="pl1">۲,۲۵۹<span class="change neg">(<b>+۶۱۶</b>)</span></td>
+       <td class="pl1">2.4%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>ایران</b></td>
-       <td class="pl1">۸۲,۲۱۱<span class="change neg">(<b>+۷,۳۳۴</b>)</span></td>
-       <td class="pl1">۵,۱۱۸<span class="change neg">(<b>+۴۳۵</b>)</span></td>
+       <td class="pl1">۸۴,۸۰۲<span class="change neg">(<b>+۶,۸۰۷</b>)</span></td>
+       <td class="pl1">۵,۲۹۷<span class="change neg">(<b>+۴۲۸</b>)</span></td>
        <td class="pl1">6.2%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>اسراییل</b></td>
-       <td class="pl1">۱۳,۴۹۱<span class="change neg">(<b>+۱,۴۴۵</b>)</span></td>
-       <td class="pl1">۱۷۲<span class="change neg">(<b>+۴۹</b>)</span></td>
+       <td class="pl1">۱۳,۹۴۲<span class="change neg">(<b>+۱,۱۸۴</b>)</span></td>
+       <td class="pl1">۱۸۴<span class="change neg">(<b>+۴۲</b>)</span></td>
        <td class="pl1">1.3%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>عربستان سعودی</b></td>
-       <td class="pl1">۹,۳۶۲<span class="change neg">(<b>+۳,۹۹۳</b>)</span></td>
-       <td class="pl1">۹۷<span class="change neg">(<b>+۲۴</b>)</span></td>
-       <td class="pl1">1.0%</td>
+       <td class="pl1">۱۱,۶۳۱<span class="change neg">(<b>+۵,۲۵۱</b>)</span></td>
+       <td class="pl1">۱۰۹<span class="change neg">(<b>+۲۶</b>)</span></td>
+       <td class="pl1">0.9%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>امارات متحده عربی</b></td>
-       <td class="pl1">۶,۷۸۱<span class="change neg">(<b>+۱,۸۴۸</b>)</span></td>
-       <td class="pl1">۴۱<span class="change neg">(<b>+۱۳</b>)</span></td>
+       <td class="pl1">۷,۷۵۵<span class="change neg">(<b>+۱,۹۳۰</b>)</span></td>
+       <td class="pl1">۴۶<span class="change neg">(<b>+۱۱</b>)</span></td>
        <td class="pl1">0.6%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>قطر</b></td>
-       <td class="pl1">۵,۴۴۸<span class="change neg">(<b>+۲,۰۲۰</b>)</span></td>
-       <td class="pl1">۸<span class="change neg">(<b>+۱</b>)</span></td>
+       <td class="pl1">۶,۵۳۳<span class="change neg">(<b>+۲,۴۳۰</b>)</span></td>
+       <td class="pl1">۹<span class="change neg">(<b>+۲</b>)</span></td>
        <td class="pl1">0.1%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>مصر</b></td>
-       <td class="pl1">۳,۱۴۴<span class="change neg">(<b>+۷۹۴</b>)</span></td>
-       <td class="pl1">۲۳۹<span class="change neg">(<b>+۶۱</b>)</span></td>
+       <td class="pl1">۳,۴۹۰<span class="change neg">(<b>+۸۱۷</b>)</span></td>
+       <td class="pl1">۲۶۴<span class="change neg">(<b>+۶۸</b>)</span></td>
        <td class="pl1">7.6%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>کویت</b></td>
-       <td class="pl1">۱,۹۱۵<span class="change neg">(<b>+۵۶۰</b>)</span></td>
-       <td class="pl1">۷<span class="change neg">(<b>+۴</b>)</span></td>
-       <td class="pl1">0.4%</td>
+       <td class="pl1">۲,۰۸۰<span class="change neg">(<b>+۵۵۶</b>)</span></td>
+       <td class="pl1">۱۱<span class="change neg">(<b>+۸</b>)</span></td>
+       <td class="pl1">0.5%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>بحرین</b></td>
-       <td class="pl1">۱,۸۸۱<span class="change neg">(<b>+۳۵۳</b>)</span></td>
+       <td class="pl1">۱,۹۷۳<span class="change neg">(<b>+۲۷۳</b>)</span></td>
        <td class="pl1">۷<span class="change neg">(<b>+۰</b>)</span></td>
        <td class="pl1">0.4%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>عراق</b></td>
-       <td class="pl1">۱,۵۳۹<span class="change neg">(<b>+۱۳۹</b>)</span></td>
-       <td class="pl1">۸۲<span class="change neg">(<b>+۴</b>)</span></td>
-       <td class="pl1">5.3%</td>
+       <td class="pl1">۱,۶۰۲<span class="change neg">(<b>+۱۶۸</b>)</span></td>
+       <td class="pl1">۸۳<span class="change neg">(<b>+۳</b>)</span></td>
+       <td class="pl1">5.2%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>عمان</b></td>
-       <td class="pl1">۱,۲۶۶<span class="change neg">(<b>+۴۵۳</b>)</span></td>
-       <td class="pl1">۷<span class="change neg">(<b>+۳</b>)</span></td>
-       <td class="pl1">0.6%</td>
+       <td class="pl1">۱,۵۰۸<span class="change neg">(<b>+۴۸۹</b>)</span></td>
+       <td class="pl1">۸<span class="change neg">(<b>+۴</b>)</span></td>
+       <td class="pl1">0.5%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>لبنان</b></td>
-       <td class="pl1">۶۷۳<span class="change neg">(<b>+۳۲</b>)</span></td>
+       <td class="pl1">۶۷۷<span class="change neg">(<b>+۱۴</b>)</span></td>
        <td class="pl1">۲۱<span class="change neg">(<b>+۰</b>)</span></td>
        <td class="pl1">3.1%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>اردن</b></td>
-       <td class="pl1">۴۱۷<span class="change neg">(<b>+۲۰</b>)</span></td>
+       <td class="pl1">۴۲۸<span class="change neg">(<b>+۲۶</b>)</span></td>
        <td class="pl1">۷<span class="change neg">(<b>+۰</b>)</span></td>
-       <td class="pl1">1.7%</td>
+       <td class="pl1">1.6%</td>
      </tr>
    
      <tr>
        <td class="mw"><b>سوریه</b></td>
-       <td class="pl1">۳۹<span class="change neg">(<b>+۱۰</b>)</span></td>
+       <td class="pl1">۴۲<span class="change neg">(<b>+۹</b>)</span></td>
        <td class="pl1">۳<span class="change neg">(<b>+۱</b>)</span></td>
-       <td class="pl1">7.7%</td>
+       <td class="pl1">7.1%</td>
      </tr>
    
      <tr>
-       <td class="mw"><b>یمن</b></td>
+       <td class="mw"><b>Yemen</b></td>
        <td class="pl1">۱<span class="change neg">(<b>+۰</b>)</span></td>
        <td class="pl1">۰<span class="change neg">(<b>+۰</b>)</span></td>
        <td class="pl1">0.0%</td>
@@ -523,7 +523,6 @@ layout: notebook
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>تحلیل اصلی از <a href="http://www.solmazabbaspour.com/">سولماز عباسپور</a><sup class="footnote-ref" id="fnref-۱"><a href="#fn-۱">1</a></sup></p>
-<p>طراحی از  <a href="https://github.com/nilouhou//">نیلوفر هوشمند</a></p>
 <div class="footnotes">
 <hr>
 <ol><li id="fn-۱"><p>منبع: <a href="https://systems.jhu.edu/research/public-health/ncov/">"2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE"</a> <a href="https://github.com/CSSEGISandData/COVID-19">GitHub repository</a>. لینک به صفحه <a href="https://github.com/pratapvardhan/notebooks/blob/master/covid19/covid19-compare-country-trajectories.ipynb">اصلی</a>.<a href="#fnref-۱" class="footnote">&#8617;</a></p></li>
