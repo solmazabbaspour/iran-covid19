@@ -3,8 +3,8 @@ keywords: fastai
 description: مروری بر مبتلایان کرونا ، مرگ و میر و موارد جدید براساس کشور در خاورمیانه.
 title: کرونا در خاورمیانه
 comments: true
-author: سولماز عباسپور
-categories: [ خاورمیانه, مرور]
+author: نیلوفر هوشمند ، سولماز عباسپور
+categories: [ خاورمیانه, مرور,نقشه]
 image: images/covid-middle-east.png
 permalink: /covid-middle-east-overview/
 hide: false
@@ -522,7 +522,8 @@ layout: notebook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>تحلیل اصلی از <a href="http://www.solmazabbaspour.com/">سولماز عباسپور</a><sup class="footnote-ref" id="fnref-۱"><a href="#fn-۱">1</a></sup></p>
+<p>طراحی از <a href="https://github.com/nilouhou/middle_east">نیلوفر هوشمند</a></p>
+<p>تحلیل از <a href="http://www.solmazabbaspour.com/">سولماز عباسپور</a><sup class="footnote-ref" id="fnref-۱"><a href="#fn-۱">1</a></sup></p>
 <div class="footnotes">
 <hr>
 <ol><li id="fn-۱"><p>منبع: <a href="https://systems.jhu.edu/research/public-health/ncov/">"2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE"</a> <a href="https://github.com/CSSEGISandData/COVID-19">GitHub repository</a>. لینک به صفحه <a href="https://github.com/pratapvardhan/notebooks/blob/master/covid19/covid19-compare-country-trajectories.ipynb">اصلی</a>.<a href="#fnref-۱" class="footnote">&#8617;</a></p></li>
