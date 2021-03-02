@@ -1,3 +1,4 @@
+# This project has sunsetted 🌆 
 
 ![](https://github.com/solmazabbaspour/iran-covid19/workflows/CI/badge.svg)
 ![](https://github.com/solmazabbaspour/iran-covid19/workflows/GH-Pages%20Status/badge.svg)
